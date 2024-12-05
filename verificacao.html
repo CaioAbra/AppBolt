@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificação - Bolt</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./static/libs/bootstrap/css/bootstrap.min.css">
+    <!-- Estilo CSS Compilado -->
+    <link rel="stylesheet" href="./static/css/styles.css">
+</head>
+
+<body id="verificacao">
+    <!-- Header -->
+    <header class="">
+        <div class="status">
+            <span>Status Bolt</span>
+            <div class="d-flex text-left status-adjust">
+                <span class="status-active mr-1">Ativo</span>
+                <span class="status-indicator"></span>
+            </div>
+        </div>
+        <div class="logo">
+            <img src="./static/assets/images/bolt-logo.webp" alt="Bolt Logo">
+            <!-- <small>Powered by Atlas</small> -->
+        </div>
+        <div class="logout">
+            <button class="btn btn-link p-0">
+                <img src="./static/assets/images/power-icon.webp" alt="Logout" width="12" height="12">
+            </button>
+        </div>
+    </header>
+
+
+    <!-- Formulário de Verificação -->
+    <div class="container d-flex justify-content-center align-items-center pt-4">
+        <div class="verification-card text-center p-4">
+            <h2>
+                É necessário verificação<br>
+                de dados para liberação do<br>
+                aplicativo, por favor, preencha<br>
+                todos os dados abaixo.
+            </h2>
+            <form>
+                <div class="form-group text-left">
+                    <input type="text" class="form-control" id="name" placeholder="Digite seu nome:">
+                </div>
+                <div class="form-group text-left">
+                    <input type="text" class="form-control" id="surname" placeholder="Digite seu sobrenome:">
+                </div>
+                <div class="form-group text-left">
+                    <input type="email" class="form-control" id="email" placeholder="Digite seu e-mail:">
+                </div>
+                <div class="form-group text-left">
+                    <input type="text" class="form-control" id="phone" placeholder="Digite seu telefone:">
+                </div>
+                <div class="form-group text-left">
+                    <input type="date" class="form-control" id="dob" placeholder="Data de nascimento:">
+                </div>
+                <button type="submit" class="btn btn-primary btn-block mt-3">Verificar minha conta</button>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- jQuery -->
+    <script src="./static/libs/jquery/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="./static/libs/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Custom Scripts -->
+    <script src="./static/src/js/scripts.js"></script>
+</body>
+
+</html>
