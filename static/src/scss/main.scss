@@ -469,3 +469,131 @@ body {
         }
     }
 }
+
+#ativos {
+    background: url('./../assets/images/background-verification.webp') no-repeat center center/cover;
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background: rgba(0, 0, 0, 0.3);
+
+        // border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+        .status {
+            // display: flex;
+            align-items: center;
+            font-size: 8px;
+            font-weight: 300;
+            text-align: left;
+            color: var(--status-color);
+
+            .status-adjust {
+                align-items: center;
+                justify-content: flex-start;
+            }
+
+            .status-active {
+                font-size: 12px;
+                color: #FFFFFF;
+                font-weight: 400;
+                // margin-left: 5px;
+            }
+
+            .status-indicator {
+                width: 5px;
+                height: 5px;
+                background-color: var(--primary-color);
+                border-radius: 50%;
+                margin-left: 5px;
+            }
+        }
+
+        .logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transform: translateX(-20%);
+
+            img {
+                width: 80px;
+                /* Ajuste conforme necessário */
+            }
+
+            small {
+                font-size: 10px;
+                color: var(--secondary-color);
+                margin-top: -5px;
+            }
+        }
+
+        .logout button {
+            background: transparent;
+            border: none;
+
+            img {
+                filter: brightness(0.8);
+                transition: filter 0.3s;
+
+                &:hover {
+                    filter: brightness(1);
+                }
+            }
+        }
+    }
+
+    .ativos-card {
+        background: rgba(20, 20, 20, 0.8);
+        border-radius: var(--border-radius);
+        padding: 20px;
+        max-width: 500px;
+        width: 100%;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+
+        .ativo-card {
+            background: var(--dark-bg);
+            border: 1px solid var(--input-border);
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 400;
+            color: var(--secondary-color);
+            padding: 10px 12px;
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            transition: background-color var(--transition-speed);
+
+            &:hover {
+                // background-color: lighten(var(--dark-bg), 5%);
+            }
+
+            .icon {
+                width: 25px;
+                height: 15px;
+
+                &.cripto{
+                    width: 15px;
+                    height: 15px;
+                }
+            }
+        }
+    }
+
+    .btn-link-atlas {
+        display: flex;
+        position: fixed;
+        bottom: 1rem;
+        right: 1rem;
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--primary-color);
+        border-radius: calc(var(--border-radius)/2);
+        border: 1px solid var(--primary-color);
+
+        &:hover {
+            color: var(--btn-hover-color);
+        }
+    }
+}
