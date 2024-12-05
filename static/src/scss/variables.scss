@@ -1,0 +1,44 @@
+/* Variáveis Globais */
+
+/* Cores */
+:root {
+    --primary-color: #EF7A26;
+    /* Cor principal usada em botões e destaques */
+    --secondary-color: #D9D9D9;
+    /* Cor secundária usada para textos */
+    --dark-bg: #1F1F1F;
+    /* Cor de fundo dos inputs */
+    --input-border: #5F5F5F;
+    /* Cor da borda dos inputs */
+    --input-focus: #EF7A26;
+    /* Cor de foco dos inputs */
+    --border-gradient-start: #242424;
+    /* Gradiente de borda inicial */
+    --border-gradient-end: #666666;
+    /* Gradiente de borda final */
+    --btn-hover: #e65f00;
+    /* Cor de hover dos botões */
+}
+
+/* Fontes */
+:root {
+    --font-main: 'SpaceGrotesk', sans-serif;
+    /* Fonte principal */
+}
+
+/* Dimensões */
+:root {
+    --border-radius: 12px;
+    /* Borda arredondada padrão */
+    --input-radius: 6px;
+    /* Borda arredondada para inputs */
+    --card-width: 400px;
+    /* Largura máxima do card */
+}
+
+/* Outros */
+:root {
+    --transition-speed: 0.3s;
+    /* Velocidade padrão para transições */
+}
+

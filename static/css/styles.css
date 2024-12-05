@@ -1,11 +1,37 @@
-@font-face {
-  font-family: "SpaceGrotesk";
-  src: url(./../assets/fonts/SpaceGrotesk.ttf);
-}
-body {
-  font-family: "SpaceGrotesk", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+@charset "UTF-8";
+/* Variáveis Globais */
+:root {
+  --primary-color: #EF7A26;
+  /* Cor principal */
+  --secondary-color: #D9D9D9;
+  /* Cor secundária */
+  --dark-bg: #1F1F1F;
+  /* Fundo dos inputs */
+  --input-border: #5F5F5F;
+  /* Borda dos inputs */
+  --input-focus: #EF7A26;
+  /* Cor de foco dos inputs */
+  --btn-hover-color: #e65f00;
+  /* Cor do hover do botão */
+  --font-main: "SpaceGrotesk", sans-serif;
+  /* Fonte principal */
+  --border-radius: 12px;
+  /* Bordas arredondadas padrão */
+  --transition-speed: 0.3s;
+  /* Velocidade padrão para transições */
 }
 
+/* Fontes */
+@font-face {
+  font-family: "SpaceGrotesk";
+  src: url("./../assets/fonts/SpaceGrotesk.ttf");
+}
+/* Estilos Globais */
+body {
+  font-family: var(--font-main);
+}
+
+/* Estilos da Tela de Login */
 #login {
   background: url("./../assets/images/background-login.webp") no-repeat center center/cover;
 }
@@ -14,15 +40,15 @@ body {
   border: 0.5px solid;
   border-image-source: linear-gradient(180deg, #242424 0%, #666666 100%);
   backdrop-filter: blur(20px);
-  border-radius: 12px;
-  color: #B9B9B9;
+  border-radius: var(--border-radius);
+  color: var(--secondary-color);
   max-width: 400px;
   width: 100%;
 }
 #login .login-card h2 {
   font-size: 20px;
   font-weight: 300;
-  color: #D9D9D9;
+  color: var(--secondary-color);
 }
 #login .login-card img {
   width: 83px;
@@ -31,35 +57,34 @@ body {
 #login .login-card label {
   font-size: 12px;
   font-weight: 300;
-  color: #D9D9D9;
+  color: var(--secondary-color);
 }
 #login .login-card input {
-  background: #1F1F1F;
-  border: #5F5F5F solid 1px;
-  backdrop-filter: blur(10px);
+  background: var(--dark-bg);
+  border: 1px solid var(--input-border);
   border-radius: 6px;
   font-size: 10px;
   font-weight: 300;
-  color: #5F5F5F;
-  transition: all 0.3s ease;
+  color: var(--input-border);
+  transition: all var(--transition-speed) ease;
 }
 #login .login-card input:focus {
-  background: #FFFFFF;
-  border: #EF7A26 solid 1px;
+  background: #fff;
+  border: 1px solid var(--input-focus);
   color: #141414;
   font-weight: 400;
-  box-shadow: 0 0 0 1px #EF7A26;
+  box-shadow: 0 0 0 1px var(--input-focus);
 }
 #login .login-card .btn-primary {
-  background-color: #EF7A26;
-  border-color: #EF7A26;
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
   color: #141414;
   font-size: 14px;
   font-weight: 600;
 }
 #login .login-card .btn-primary:hover {
-  background-color: #e65f00;
-  border-color: #e65f00;
+  background-color: var(--btn-hover-color);
+  border-color: var(--btn-hover-color);
 }
 
 /*# sourceMappingURL=styles.css.map */
