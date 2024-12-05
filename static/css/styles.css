@@ -1,0 +1,65 @@
+@font-face {
+  font-family: "SpaceGrotesk";
+  src: url(./../assets/fonts/SpaceGrotesk.ttf);
+}
+body {
+  font-family: "SpaceGrotesk", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+#login {
+  background: url("./../assets/images/background-login.webp") no-repeat center center/cover;
+}
+#login .login-card {
+  background: rgba(20, 20, 20, 0.8);
+  border: 0.5px solid;
+  border-image-source: linear-gradient(180deg, #242424 0%, #666666 100%);
+  backdrop-filter: blur(20px);
+  border-radius: 12px;
+  color: #B9B9B9;
+  max-width: 400px;
+  width: 100%;
+}
+#login .login-card h2 {
+  font-size: 20px;
+  font-weight: 300;
+  color: #D9D9D9;
+}
+#login .login-card img {
+  width: 83px;
+  height: 45.79px;
+}
+#login .login-card label {
+  font-size: 12px;
+  font-weight: 300;
+  color: #D9D9D9;
+}
+#login .login-card input {
+  background: #1F1F1F;
+  border: #5F5F5F solid 1px;
+  backdrop-filter: blur(10px);
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 300;
+  color: #5F5F5F;
+  transition: all 0.3s ease;
+}
+#login .login-card input:focus {
+  background: #FFFFFF;
+  border: #EF7A26 solid 1px;
+  color: #141414;
+  font-weight: 400;
+  box-shadow: 0 0 0 1px #EF7A26;
+}
+#login .login-card .btn-primary {
+  background-color: #EF7A26;
+  border-color: #EF7A26;
+  color: #141414;
+  font-size: 14px;
+  font-weight: 600;
+}
+#login .login-card .btn-primary:hover {
+  background-color: #e65f00;
+  border-color: #e65f00;
+}
+
+/*# sourceMappingURL=styles.css.map */
