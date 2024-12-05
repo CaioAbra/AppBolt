@@ -603,9 +603,7 @@ body {
 
     .btn-link-atlas {
         display: flex;
-        position: fixed;
-        bottom: 1rem;
-        right: 1rem;
+        position: relative;
         font-size: 12px;
         font-weight: 600;
         color: var(--primary-color);
