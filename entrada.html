@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrada - Bolt</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./static/libs/bootstrap/css/bootstrap.min.css">
+    <!-- Estilo CSS Compilado -->
+    <link rel="stylesheet" href="./static/css/styles.css">
+</head>
+
+<body id="entrada">
+    <!-- Header -->
+    <header class="">
+        <div class="status">
+            <span>Status Bolt</span>
+            <div class="d-flex text-left status-adjust">
+                <span class="status-active mr-1">Ativo</span>
+                <span class="status-indicator"></span>
+            </div>
+        </div>
+        <div class="logo">
+            <img src="./static/assets/images/bolt-logo.webp" alt="Bolt Logo">
+        </div>
+        <div class="logout">
+            <button class="btn btn-link p-0">
+                <img src="./static/assets/images/power-icon.webp" alt="Logout" width="12" height="12">
+            </button>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <div class="container d-flex flex-column align-items-center pt-5 mt-5">
+        <h2 class="text-center mb-4">
+            Realize entradas analisadas pela Bolt IA,<br>
+            negociações rápidas em 1 clique,<br>
+            bata sua meta com mais facilidade!
+        </h2>
+
+        <!-- Botões de Configuração -->
+        <div class="btn-group mb-4" role="group">
+            <button type="button" class="btn btn-secondary">Histórico</button>
+            <button type="button" class="btn btn-secondary btn-desactive">
+                <img src="./static/assets/images/icon-btc.webp" alt="BTC Icon" class="icon mr-1"> BTC
+            </button>
+            <button type="button" class="btn btn-secondary">M1</button>
+            <button type="button" class="btn btn-primary">
+                <img src="./static/assets/images/bolt-icon.webp" alt="Bolt IA Icon" class="icon mr-1"> Bolt
+            </button>
+        </div>
+
+        <!-- Formulário -->
+        <form class="w-100" style="max-width: 400px;">
+            <div class="row">
+                <div class="col-6 pr-1">
+                    <div class="form-group d-flex justify-content-between align-items-center">
+                        <label>Proteções:</label>
+                        <span class="value">2</span>
+                    </div>
+                </div>
+                <div class="col-6 pl-1">
+                    <div class="form-group d-flex justify-content-between align-items-center">
+                        <label>Ações:</label>
+                        <button type="button" class="btn btn-link value d-flex align-items-center p-0">
+                            Venda
+                            <img src="./static/assets/images/down-arrow.webp" alt="Seta para baixo" class="ml-2"
+                                style="width: 10px; height: 10px;">
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 pr-1">
+                    <div class="form-group d-flex justify-content-between align-items-center">
+                        <label>Válido até:</label>
+                        <span class="value">20:22</span>
+                    </div>
+                </div>
+                <div class="col-6 pl-1">
+                    <div class="form-group d-flex justify-content-between align-items-center">
+                        <label>Assertividade:</label>
+                        <span class="value">90%</span>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-realizar">
+                <span class="btn-left"></span>
+                <span class="btn-text">Realizar Entrada</span>
+            </button>
+
+        </form>
+
+
+
+        <!-- Lista de Ganhos -->
+        <div class="mt-3 text-left w-100 list-win" style="max-width: 400px;">
+            <p>Joao*** ganhou <span>R$ 124,00</span></p>
+            <p>Henr*** ganhou <span>R$ 124,00</span></p>
+            <p>Rena*** ganhou <span>R$ 124,00</span></p>
+            <p>Feli*** ganhou <span>R$ 124,00</span></p>
+            <p>Marc*** ganhou <span>R$ 124,00</span></p>
+        </div>
+
+        <!-- Link Secundário -->
+        <button class="btn btn-link-atlas mt-4 ml-auto">Abrir Atlas</button>
+    </div>
+
+    <!-- jQuery -->
+    <script src="./static/libs/jquery/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="./static/libs/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Custom Scripts -->
+    <script src="./static/src/js/scripts.js"></script>
+</body>
+
+</html>

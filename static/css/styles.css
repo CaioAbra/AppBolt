@@ -511,4 +511,198 @@ body {
   color: var(--btn-hover-color);
 }
 
+#entrada {
+  background: #000000;
+}
+#entrada header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: rgba(0, 0, 0, 0.3);
+}
+#entrada header .status {
+  align-items: center;
+  font-size: 8px;
+  font-weight: 300;
+  text-align: left;
+  color: var(--status-color);
+}
+#entrada header .status .status-adjust {
+  align-items: center;
+  justify-content: flex-start;
+}
+#entrada header .status .status-active {
+  font-size: 12px;
+  color: #FFFFFF;
+  font-weight: 400;
+}
+#entrada header .status .status-indicator {
+  width: 5px;
+  height: 5px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  margin-left: 5px;
+}
+#entrada header .logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateX(-20%);
+}
+#entrada header .logo img {
+  width: 80px;
+  /* Ajuste conforme necessário */
+}
+#entrada header .logo small {
+  font-size: 10px;
+  color: var(--secondary-color);
+  margin-top: -5px;
+}
+#entrada header .logout button {
+  background: transparent;
+  border: none;
+}
+#entrada header .logout button img {
+  filter: brightness(0.8);
+  transition: filter 0.3s;
+}
+#entrada header .logout button img:hover {
+  filter: brightness(1);
+}
+#entrada h2 {
+  font-size: 12px;
+  font-weight: 400;
+  color: #B9B9B9;
+  text-align: center;
+  margin-bottom: 20px;
+}
+#entrada .btn-group .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 400;
+  border: 1px solid var(--input-border);
+  border-radius: 6px;
+  padding: 8px 12px;
+  transition: all var(--transition-speed);
+  backdrop-filter: blur(4px);
+  /* Ícones */
+  /* Botão Secundário (Preto com Bordas) */
+  /* Botão Primário (Laranja) */
+  /* Espaçamento entre os botões */
+}
+#entrada .btn-group .btn .icon {
+  width: 18px;
+  height: 18px;
+}
+#entrada .btn-group .btn.btn-secondary {
+  background: #141414;
+  color: #FFFFFF;
+  border: 1px solid #FFFFFF;
+}
+#entrada .btn-group .btn.btn-primary {
+  background-color: #FFFFFF;
+  color: #141414;
+}
+#entrada .btn-group .btn.btn-desactive {
+  border: solid 1px #1F1F1F;
+  color: #5F5F5F;
+  background: #141414;
+}
+#entrada .btn-group .btn + .btn {
+  margin-left: 8px;
+}
+#entrada form .form-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1F1F1F;
+  border-radius: 6px;
+  padding: 8px 12px;
+  margin-bottom: 7px;
+}
+#entrada form .form-group label {
+  font-size: 12px;
+  font-weight: 400;
+  color: #B9B9B9;
+  margin-bottom: 0;
+}
+#entrada form .form-group .value {
+  font-size: 10px;
+  font-weight: 300;
+  color: #FFFFFF;
+}
+#entrada form .form-group button.btn-link {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--secondary-color);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+#entrada form .form-group button.btn-link img {
+  margin-left: 4px;
+  transition: transform 0.3s;
+}
+#entrada form .form-group button.btn-link:hover img {
+  transform: rotate(180deg);
+}
+#entrada form .btn-realizar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #B9B9B9;
+  border: none;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  padding: 0;
+  height: 40px;
+  /* Ajuste conforme necessário */
+  width: 100%;
+}
+#entrada form .btn-realizar:hover {
+  background: #c6c6c6;
+}
+#entrada form .btn-realizar .btn-left {
+  background-color: var(--primary-color);
+  width: 30.5%;
+  /* Proporção da área laranja */
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+#entrada form .btn-realizar .btn-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: #141414;
+  z-index: 1;
+  /* Garante que o texto fique acima */
+  position: relative;
+}
+#entrada .btn-link-atlas {
+  display: flex;
+  position: relative;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--primary-color);
+  border-radius: calc(var(--border-radius) / 2);
+  border: 1px solid var(--primary-color);
+}
+#entrada .btn-link-atlas:hover {
+  color: var(--btn-hover-color);
+}
+#entrada .list-win p {
+  font-size: 10px;
+  font-weight: 300;
+  color: #B9B9B9;
+  margin-bottom: 0px;
+}
+#entrada .list-win p span {
+  color: var(--primary-color);
+}
+
 /*# sourceMappingURL=styles.css.map */
