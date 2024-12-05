@@ -454,18 +454,34 @@ body {
   filter: brightness(1);
 }
 #ativos .ativos-card {
+  position: relative;
   background: rgba(20, 20, 20, 0.8);
   border-radius: var(--border-radius);
-  padding: 20px;
-  max-width: 500px;
+  color: var(--secondary-color);
+  max-width: 400px;
   width: 100%;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  z-index: 1;
+}
+#ativos .ativos-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--border-radius);
+  padding: 1px;
+  background: linear-gradient(180deg, #242424 0%, #666666 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: -1;
 }
 #ativos .ativos-card .ativo-card {
   background: var(--dark-bg);
-  border: 1px solid var(--input-border);
   border-radius: 6px;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 400;
   color: var(--secondary-color);
   padding: 10px 12px;
