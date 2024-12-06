@@ -213,6 +213,26 @@ input:not([type="checkbox"]) {
     }
 }
 
+.btn-link-atlas {
+    display: flex;
+    position: fixed;
+    bottom: 1rem; /* Espaço da parte inferior */
+    right: 1rem; /* Espaço da lateral direita */
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--primary-color);
+    background: var(--button-bg, transparent); /* Caso precise de fundo */
+    border-radius: calc(var(--border-radius) / 2);
+    border: 1px solid var(--primary-color);
+    padding: 0.5rem 1rem; /* Adiciona espaçamento interno */
+    z-index: 1000; /* Garante que estará acima de outros elementos */
+    transition: all 0.3s ease; /* Transição suave para hover */
+
+    &:hover {
+        color: var(--btn-hover-color);
+    }
+}
+
 /* ===========================
    ESTILOS ESPECÍFICOS DAS PÁGINAS
 =========================== */
@@ -334,21 +354,7 @@ input:not([type="checkbox"]) {
 
     }
 
-    .btn-link-atlas {
-        display: flex;
-        position: fixed;
-        bottom: 1rem;
-        right: 1rem;
-        font-size: 12px;
-        font-weight: 600;
-        color: var(--primary-color);
-        border-radius: calc(var(--border-radius)/2);
-        border: 1px solid var(--primary-color);
 
-        &:hover {
-            color: var(--btn-hover-color);
-        }
-    }
 }
 
 #ativos {
@@ -375,21 +381,6 @@ input:not([type="checkbox"]) {
                 width: 20px;
                 height: 20px;
             }
-        }
-    }
-
-
-    .btn-link-atlas {
-        display: flex;
-        position: relative;
-        font-size: 12px;
-        font-weight: 600;
-        color: var(--primary-color);
-        border-radius: calc(var(--border-radius)/2);
-        border: 1px solid var(--primary-color);
-
-        &:hover {
-            color: var(--btn-hover-color);
         }
     }
 }
@@ -550,22 +541,6 @@ input:not([type="checkbox"]) {
 
     }
 
-
-    .btn-link-atlas {
-        display: flex;
-        position: relative;
-        font-size: 12px;
-        font-weight: 600;
-        color: var(--primary-color);
-        border-radius: calc(var(--border-radius)/2);
-        border: 1px solid var(--primary-color);
-
-        &:hover {
-            color: var(--btn-hover-color);
-        }
-    }
-
-
     .list-win {
         p {
             font-size: 10px;
@@ -652,20 +627,6 @@ input:not([type="checkbox"]) {
                     color: var(--primary-color);
                 }
             }
-        }
-    }
-
-    .btn-link-atlas {
-        display: flex;
-        position: relative;
-        font-size: 12px;
-        font-weight: 600;
-        color: var(--primary-color);
-        border-radius: calc(var(--border-radius)/2);
-        border: 1px solid var(--primary-color);
-
-        &:hover {
-            color: var(--btn-hover-color);
         }
     }
 }
