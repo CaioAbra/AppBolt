@@ -1,1 +1,0 @@
-sass --watch D:\Developer\wamp64\www\AppBolt\static\src\scss\main.scss:D:\Developer\wamp64\www\AppBolt\static\css\styles.css 
