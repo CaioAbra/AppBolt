@@ -127,7 +127,8 @@ header {
 .ativos-card,
 .bolt-ia-card,
 .historico-card,
-.coin-acertive-card {
+.coin-acertive-card,
+.atention-card {
     position: relative;
     background: rgba(20, 20, 20, 0.8);
     /* Transparência */
@@ -822,4 +823,33 @@ input:not([type="checkbox"]) {
         }
     }
 
+}
+
+#atention {
+    background: url('./../assets/images/background-verification.webp') no-repeat center center/cover;
+
+    h2 {
+        font-size: 18px;
+        font-weight: 500;
+        color: #fff;
+    }
+
+    p {
+        font-size: 14px;
+        font-weight: 400;
+        color: #B9B9B9;
+
+        b {
+            color: #FFFFFF;
+        }
+
+        .highlight {
+            font-weight: 400;
+            color: var(--primary-color);
+        }
+
+        &.text-secundary {
+            font-size: 12px;
+        }
+    }
 }

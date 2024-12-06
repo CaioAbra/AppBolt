@@ -112,7 +112,8 @@ header .logout button img:hover {
 .ativos-card,
 .bolt-ia-card,
 .historico-card,
-.coin-acertive-card {
+.coin-acertive-card,
+.atention-card {
   position: relative;
   background: rgba(20, 20, 20, 0.8);
   /* Transparência */
@@ -142,7 +143,8 @@ header .logout button img:hover {
 .ativos-card::before,
 .bolt-ia-card::before,
 .historico-card::before,
-.coin-acertive-card::before {
+.coin-acertive-card::before,
+.atention-card::before {
   content: "";
   position: absolute;
   top: 0;
@@ -684,6 +686,30 @@ input:not([type=checkbox]):focus {
   margin: 0;
   font-weight: 400;
   color: #FFFFFF;
+}
+
+#atention {
+  background: url("./../assets/images/background-verification.webp") no-repeat center center/cover;
+}
+#atention h2 {
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+}
+#atention p {
+  font-size: 14px;
+  font-weight: 400;
+  color: #B9B9B9;
+}
+#atention p b {
+  color: #FFFFFF;
+}
+#atention p .highlight {
+  font-weight: 400;
+  color: var(--primary-color);
+}
+#atention p.text-secundary {
+  font-size: 12px;
 }
 
 /*# sourceMappingURL=styles.css.map */
