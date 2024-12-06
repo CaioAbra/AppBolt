@@ -244,10 +244,6 @@ input:not([type=checkbox]):focus {
   color: var(--secondary-color);
   padding-bottom: 0.8rem;
 }
-#verificacao img {
-  width: 83px;
-  height: 45.79px;
-}
 #verificacao label {
   font-size: 12px;
   font-weight: 300;
