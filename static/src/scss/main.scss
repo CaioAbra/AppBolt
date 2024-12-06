@@ -438,7 +438,8 @@ input:not([type="checkbox"]) {
 
     .ativo-card {
         background: var(--dark-bg);
-        // border: 1px solid var(--input-border);
+        border: none;
+        width: 100%;
         border-radius: 6px;
         font-size: 12px;
         font-weight: 400;
@@ -447,7 +448,8 @@ input:not([type="checkbox"]) {
         display: flex;
         align-items: center;
         justify-content: left;
-        transition: background-color var(--transition-speed);
+        transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
+        /* Transição suave */
 
         .icon {
             width: 30px;
@@ -457,6 +459,11 @@ input:not([type="checkbox"]) {
                 width: 20px;
                 height: 20px;
             }
+        }
+
+        &:hover {
+            box-shadow: 0 0 0 1px var(--primary-color);
+
         }
     }
 }
@@ -601,7 +608,7 @@ input:not([type="checkbox"]) {
             transform: translateY(100%); // Posicionado fora da área visível
             opacity: 0; // Começa invisível
             transition: opacity 1s ease, transform 1s ease; // Suaviza o movimento
-            
+
 
             span {
                 color: var(--primary-color);

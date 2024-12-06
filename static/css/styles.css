@@ -386,6 +386,8 @@ input:not([type=checkbox]):focus {
 }
 #ativos .ativo-card {
   background: var(--dark-bg);
+  border: none;
+  width: 100%;
   border-radius: 6px;
   font-size: 12px;
   font-weight: 400;
@@ -394,7 +396,8 @@ input:not([type=checkbox]):focus {
   display: flex;
   align-items: center;
   justify-content: left;
-  transition: background-color var(--transition-speed);
+  transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
+  /* Transição suave */
 }
 #ativos .ativo-card .icon {
   width: 30px;
@@ -403,6 +406,9 @@ input:not([type=checkbox]):focus {
 #ativos .ativo-card .icon.cripto {
   width: 20px;
   height: 20px;
+}
+#ativos .ativo-card:hover {
+  box-shadow: 0 0 0 1px var(--primary-color);
 }
 
 #entrada {
