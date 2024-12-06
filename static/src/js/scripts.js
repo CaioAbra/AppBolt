@@ -19,16 +19,30 @@ $(document).ready(function () {
         const $button = $(this);
         const $listWin = $('.list-win');
         const $items = $listWin.find('p');
+        const totalTime = 120; // Tempo total de 120 segundos (2 minutos)
+        let remainingTime = totalTime; // Tempo restante inicial
 
         // Bloqueia o botão e inicia o carregamento
         $button.addClass('loading').prop('disabled', true);
 
+        // Verifica se o botão tem a classe `generation-button`
+        let buttonText = $button.hasClass('generation-button')
+            ? 'Gerando sinal em:'
+            : 'Realizando entrada em:';
+
+        // Atualiza o texto inicial do botão com tempo formatado
+        $button.find('.btn-text').text(`${buttonText} ${formatTime(remainingTime)}`);
+
         let width = 0; // Largura inicial
         const interval = setInterval(function () {
             width += 1; // Incrementa 1% a cada iteração
+            remainingTime--; // Decrementa o tempo restante
             $btnLeft.css('width', `${width}%`); // Atualiza a largura
 
-            // Inicia a aparição dos itens da lista (após 1 minuto)
+            // Atualiza o texto com o tempo restante formatado
+            $button.find('.btn-text').text(`${buttonText} ${formatTime(remainingTime)}`);
+
+            // Quando atingir 50%, começa a animar os itens da lista
             if (width === 50) {
                 $items.each(function (index) {
                     setTimeout(() => {
@@ -40,11 +54,22 @@ $(document).ready(function () {
                 });
             }
 
+            // Quando o progresso atinge 100%
             if (width >= 100) {
                 clearInterval(interval); // Para o incremento ao chegar em 100%
                 $button.removeClass('loading').prop('disabled', false); // Habilita novamente
                 $listWin.addClass('scrolling'); // Inicia a rolagem contínua
+                $button.find('.btn-text').text('Realizar Entrada'); // Reseta o texto do botão
             }
-        }, 1200); // Tempo para cada incremento de 1% (120 segundos / 100 = 1200ms)
+        }, totalTime * 10); // Incremento proporcional ao tempo total (120s = 1200ms)
     });
+
+    // Função para formatar o tempo em "X min e Y s"
+    function formatTime(seconds) {
+        const minutes = Math.floor(seconds / 60); // Calcula os minutos inteiros
+        const remainingSeconds = seconds % 60; // Calcula os segundos restantes
+        return minutes > 0
+            ? `${minutes} min e ${remainingSeconds}s`
+            : `${remainingSeconds}s`; // Se não houver minutos, exibe apenas segundos
+    }
 });

@@ -222,6 +222,45 @@ input:not([type=checkbox]):focus {
   color: var(--btn-hover-color);
 }
 
+.btn-realizar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-color);
+  border: none;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  padding: 0;
+  height: 42px;
+  /* Ajuste conforme necessário */
+  width: 100%;
+}
+.btn-realizar:hover {
+  background: #c6c6c6;
+}
+.btn-realizar.loading, .btn-realizar:disabled {
+  cursor: not-allowed;
+  background: #B9B9B9;
+  opacity: 1 !important;
+}
+.btn-realizar .btn-left {
+  background-color: var(--primary-color);
+  width: 0%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.btn-realizar .btn-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: #141414;
+  z-index: 1;
+  /* Garante que o texto fique acima */
+  position: relative;
+}
+
 /* ===========================
    ESTILOS ESPECÍFICOS DAS PÁGINAS
 =========================== */
@@ -459,44 +498,6 @@ input:not([type=checkbox]):focus {
 }
 #entrada form .form-group button.btn-link:hover img {
   transform: rotate(180deg);
-}
-#entrada form .btn-realizar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #B9B9B9;
-  border: none;
-  border-radius: 6px;
-  overflow: hidden;
-  position: relative;
-  padding: 0;
-  height: 42px;
-  /* Ajuste conforme necessário */
-  width: 100%;
-}
-#entrada form .btn-realizar:hover {
-  background: #c6c6c6;
-}
-#entrada form .btn-realizar.loading, #entrada form .btn-realizar:disabled {
-  cursor: not-allowed;
-  background: #B9B9B9;
-  opacity: 1 !important;
-}
-#entrada form .btn-realizar .btn-left {
-  background-color: var(--primary-color);
-  width: 0%;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-#entrada form .btn-realizar .btn-text {
-  font-size: 14px;
-  font-weight: 600;
-  color: #141414;
-  z-index: 1;
-  /* Garante que o texto fique acima */
-  position: relative;
 }
 #entrada .list-win {
   overflow: hidden;
