@@ -42,16 +42,10 @@ $(document).ready(function () {
             // Atualiza o texto com o tempo restante formatado
             $button.find('.btn-text').text(`${buttonText} ${formatTime(remainingTime)}`);
 
-            // Quando atingir 50%, começa a animar os itens da lista
-            if (width === 50) {
-                $items.each(function (index) {
-                    setTimeout(() => {
-                        $(this).css({
-                            opacity: 1,
-                            transform: 'translateY(0)',
-                        });
-                    }, index * 500); // Anima cada item com intervalo de 500ms
-                });
+            // Quando o tempo restante atinge 1 minuto, inicia a exibição gradual dos itens
+            if (remainingTime <= 60 && !$listWin.hasClass('animating')) {
+                $listWin.addClass('animating');
+                animateListItems($items); // Função para animar os itens
             }
 
             // Quando o progresso atinge 100%
@@ -72,4 +66,17 @@ $(document).ready(function () {
             ? `${minutes} min e ${remainingSeconds}s`
             : `${remainingSeconds}s`; // Se não houver minutos, exibe apenas segundos
     }
+
+    // Função para animar os itens da lista gradualmente
+    function animateListItems($items) {
+        $items.each(function (index) {
+            setTimeout(() => {
+                $(this).css({
+                    opacity: 1,
+                    transform: 'translateY(0)',
+                });
+            }, index * 2000); // Anima cada item com intervalo de 2 segundos
+        });
+    }
 });
+

@@ -515,9 +515,12 @@ input:not([type=checkbox]):focus {
   font-weight: 300;
   color: #B9B9B9;
   margin-bottom: 0px;
-  transform: translateY(100%);
   opacity: 0;
-  transition: opacity 1s ease, transform 1s ease;
+  /* Começa invisível */
+  transform: translateY(20px);
+  /* Deslocado para baixo */
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  /* Transição suave */
 }
 #entrada .list-win p span {
   color: var(--primary-color);

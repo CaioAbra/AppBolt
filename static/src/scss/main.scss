@@ -605,9 +605,12 @@ input:not([type="checkbox"]) {
             font-weight: 300;
             color: #B9B9B9;
             margin-bottom: 0px;
-            transform: translateY(100%); // Posicionado fora da área visível
-            opacity: 0; // Começa invisível
-            transition: opacity 1s ease, transform 1s ease; // Suaviza o movimento
+            opacity: 0;
+            /* Começa invisível */
+            transform: translateY(20px);
+            /* Deslocado para baixo */
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            /* Transição suave */
 
 
             span {
