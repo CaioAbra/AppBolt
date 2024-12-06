@@ -26,28 +26,106 @@
   font-family: "SpaceGrotesk";
   src: url("./../assets/fonts/SpaceGrotesk.ttf");
 }
-/* Estilos Globais */
+/* ===========================
+   ESTILOS GLOBAIS
+=========================== */
 body {
   font-family: var(--font-main);
   min-height: 100vh;
   height: 100%;
 }
 
-/* Estilos da Tela de Login */
-#login {
-  background: url("./../assets/images/background-login.webp") no-repeat center center/cover;
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: rgba(0, 0, 0, 0.3);
 }
-#login .login-card {
+header .status {
+  align-items: center;
+  font-size: 8px;
+  font-weight: 300;
+  text-align: left;
+  color: var(--status-color);
+}
+header .status .status-adjust {
+  align-items: center;
+  justify-content: flex-start;
+}
+header .status .status-active {
+  font-size: 12px;
+  color: #FFFFFF;
+  font-weight: 400;
+}
+header .status .status-indicator {
+  width: 5px;
+  height: 5px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  margin-left: 5px;
+}
+header .logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateX(-20%);
+}
+header .logo img {
+  width: 80px;
+  /* Ajuste conforme necessário */
+}
+header .logo small {
+  font-size: 10px;
+  color: var(--secondary-color);
+  margin-top: -5px;
+}
+header .logout button {
+  background: transparent;
+  border: none;
+}
+header .logout button img {
+  filter: brightness(0.8);
+  transition: filter 0.3s;
+}
+header .logout button img:hover {
+  filter: brightness(1);
+}
+
+.login-card,
+.verification-card,
+.ativos-card,
+.bolt-ia-card,
+.historico-card {
   position: relative;
   background: rgba(20, 20, 20, 0.8);
+  /* Transparência */
   border-radius: var(--border-radius);
+  /* Use fallback para navegadores mais antigos */
   color: var(--secondary-color);
   max-width: 400px;
   width: 100%;
   padding: 30px;
   z-index: 1;
+  /* Compatibilidade extra para iOS */
+  -webkit-backdrop-filter: blur(10px);
+  /* Efeito de embaçamento */
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Para criar um efeito mais chamativo */
+  -webkit-border-radius: var(--border-radius, 10px);
+  /* Fallback */
+  -webkit-transform: translateZ(0);
+  /* Soluciona possíveis bugs de renderização */
+  -webkit-overflow-scrolling: touch;
+  /* Suporte a rolagem suave no iOS */
+  /* Efeito de gradiente na borda */
 }
-#login .login-card::before {
+.login-card::before,
+.verification-card::before,
+.ativos-card::before,
+.bolt-ia-card::before,
+.historico-card::before {
   content: "";
   position: absolute;
   top: 0;
@@ -57,26 +135,36 @@ body {
   border-radius: var(--border-radius);
   padding: 1px;
   background: linear-gradient(180deg, #242424 0%, #666666 100%);
+  /* Compatibilidade com máscara */
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  /* Ajuste para composições de máscara no Safari */
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   z-index: -1;
 }
-#login .login-card h2 {
+
+/* ===========================
+   ESTILOS ESPECÍFICOS DAS PÁGINAS
+=========================== */
+#login {
+  background: url("./../assets/images/background-login.webp") no-repeat center center/cover;
+}
+#login h2 {
   font-size: 20px;
   font-weight: 300;
   color: var(--secondary-color);
 }
-#login .login-card img {
+#login img {
   width: 83px;
   height: 45.79px;
 }
-#login .login-card label {
+#login label {
   font-size: 12px;
   font-weight: 300;
   color: var(--secondary-color);
 }
-#login .login-card input {
+#login input {
   background: var(--dark-bg);
   border: 1px solid var(--input-border);
   border-radius: 6px;
@@ -85,21 +173,21 @@ body {
   color: var(--input-border);
   transition: all var(--transition-speed) ease;
 }
-#login .login-card input:focus {
+#login input:focus {
   background: #fff;
   border: 1px solid var(--input-focus);
   color: #141414;
   font-weight: 400;
   box-shadow: 0 0 0 1px var(--input-focus);
 }
-#login .login-card .btn-primary {
+#login .btn-primary {
   background-color: var(--primary-color);
   border-color: var(--primary-color);
   color: #141414;
   font-size: 14px;
   font-weight: 600;
 }
-#login .login-card .btn-primary:hover {
+#login .btn-primary:hover {
   background-color: var(--btn-hover-color);
   border-color: var(--btn-hover-color);
 }
@@ -107,106 +195,25 @@ body {
 #verificacao {
   background: url("./../assets/images/background-verification.webp") no-repeat center center/cover;
 }
-#verificacao header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  background: rgba(0, 0, 0, 0.3);
-}
-#verificacao header .status {
-  align-items: center;
-  font-size: 8px;
-  font-weight: 300;
-  text-align: left;
-  color: var(--status-color);
-}
-#verificacao header .status .status-adjust {
-  align-items: center;
-  justify-content: flex-start;
-}
-#verificacao header .status .status-active {
-  font-size: 12px;
-  color: #FFFFFF;
-  font-weight: 400;
-}
-#verificacao header .status .status-indicator {
-  width: 5px;
-  height: 5px;
-  background-color: var(--primary-color);
-  border-radius: 50%;
-  margin-left: 5px;
-}
-#verificacao header .logo {
-  display: flex;
-  transform: translateX(-20%);
-  flex-direction: column;
-  align-items: center;
-}
-#verificacao header .logo img {
-  width: 80px;
-  /* Ajuste conforme necessário */
-}
-#verificacao header .logo small {
-  font-size: 10px;
-  color: var(--secondary-color);
-  margin-top: -5px;
-}
-#verificacao header .logout button {
-  background: transparent;
-  border: none;
-}
-#verificacao header .logout button img {
-  filter: brightness(0.8);
-  transition: filter 0.3s;
-}
-#verificacao header .logout button img:hover {
-  filter: brightness(1);
-}
-#verificacao .verification-card {
-  position: relative;
-  background: rgba(20, 20, 20, 0.8);
-  border-radius: var(--border-radius);
-  color: var(--secondary-color);
-  max-width: 400px;
-  width: 100%;
-  padding: 30px;
-  z-index: 1;
-}
-#verificacao .verification-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: var(--border-radius);
-  padding: 1px;
-  background: linear-gradient(180deg, #242424 0%, #666666 100%);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  z-index: -1;
-}
-#verificacao .verification-card h2 {
+#verificacao h2 {
   font-size: 14px;
   font-weight: 300;
   color: var(--secondary-color);
   padding-bottom: 0.8rem;
 }
-#verificacao .verification-card img {
+#verificacao img {
   width: 83px;
   height: 45.79px;
 }
-#verificacao .verification-card label {
+#verificacao label {
   font-size: 12px;
   font-weight: 300;
   color: var(--secondary-color);
 }
-#verificacao .verification-card .form-group {
+#verificacao .form-group {
   margin-bottom: 0.5rem;
 }
-#verificacao .verification-card input {
+#verificacao input {
   background: var(--dark-bg);
   border: 1px solid var(--input-border);
   border-radius: 6px;
@@ -218,83 +225,27 @@ body {
   padding-bottom: 12px;
   height: 100%;
 }
-#verificacao .verification-card input:focus {
+#verificacao input:focus {
   background: #fff;
   border: 1px solid var(--input-focus);
   color: #141414;
   font-weight: 400;
   box-shadow: 0 0 0 1px var(--input-focus);
 }
-#verificacao .verification-card .btn-primary {
+#verificacao .btn-primary {
   background-color: var(--primary-color);
   border-color: var(--primary-color);
   color: #141414;
   font-size: 14px;
   font-weight: 600;
 }
-#verificacao .verification-card .btn-primary:hover {
+#verificacao .btn-primary:hover {
   background-color: var(--btn-hover-color);
   border-color: var(--btn-hover-color);
 }
 
 #home {
   background: url("./../assets/images/background-verification.webp") no-repeat center center/cover;
-}
-#home header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  background: rgba(0, 0, 0, 0.3);
-}
-#home header .status {
-  align-items: center;
-  font-size: 8px;
-  font-weight: 300;
-  text-align: left;
-  color: var(--status-color);
-}
-#home header .status .status-adjust {
-  align-items: center;
-  justify-content: flex-start;
-}
-#home header .status .status-active {
-  font-size: 12px;
-  color: #FFFFFF;
-  font-weight: 400;
-}
-#home header .status .status-indicator {
-  width: 5px;
-  height: 5px;
-  background-color: var(--primary-color);
-  border-radius: 50%;
-  margin-left: 5px;
-}
-#home header .logo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transform: translateX(-20%);
-}
-#home header .logo img {
-  width: 80px;
-  /* Ajuste conforme necessário */
-}
-#home header .logo small {
-  font-size: 10px;
-  color: var(--secondary-color);
-  margin-top: -5px;
-}
-#home header .logout button {
-  background: transparent;
-  border: none;
-}
-#home header .logout button img {
-  filter: brightness(0.8);
-  transition: filter 0.3s;
-}
-#home header .logout button img:hover {
-  filter: brightness(1);
 }
 #home h1 {
   font-size: 16px;
@@ -397,88 +348,7 @@ body {
 #ativos {
   background: url("./../assets/images/background-verification.webp") no-repeat center center/cover;
 }
-#ativos header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  background: rgba(0, 0, 0, 0.3);
-}
-#ativos header .status {
-  align-items: center;
-  font-size: 8px;
-  font-weight: 300;
-  text-align: left;
-  color: var(--status-color);
-}
-#ativos header .status .status-adjust {
-  align-items: center;
-  justify-content: flex-start;
-}
-#ativos header .status .status-active {
-  font-size: 12px;
-  color: #FFFFFF;
-  font-weight: 400;
-}
-#ativos header .status .status-indicator {
-  width: 5px;
-  height: 5px;
-  background-color: var(--primary-color);
-  border-radius: 50%;
-  margin-left: 5px;
-}
-#ativos header .logo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transform: translateX(-20%);
-}
-#ativos header .logo img {
-  width: 80px;
-  /* Ajuste conforme necessário */
-}
-#ativos header .logo small {
-  font-size: 10px;
-  color: var(--secondary-color);
-  margin-top: -5px;
-}
-#ativos header .logout button {
-  background: transparent;
-  border: none;
-}
-#ativos header .logout button img {
-  filter: brightness(0.8);
-  transition: filter 0.3s;
-}
-#ativos header .logout button img:hover {
-  filter: brightness(1);
-}
-#ativos .ativos-card {
-  position: relative;
-  background: rgba(20, 20, 20, 0.8);
-  border-radius: var(--border-radius);
-  color: var(--secondary-color);
-  max-width: 400px;
-  width: 100%;
-  padding: 30px;
-  z-index: 1;
-}
-#ativos .ativos-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: var(--border-radius);
-  padding: 1px;
-  background: linear-gradient(180deg, #242424 0%, #666666 100%);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  z-index: -1;
-}
-#ativos .ativos-card .ativo-card {
+#ativos .ativo-card {
   background: var(--dark-bg);
   border-radius: 6px;
   font-size: 10px;
@@ -490,11 +360,11 @@ body {
   justify-content: left;
   transition: background-color var(--transition-speed);
 }
-#ativos .ativos-card .ativo-card .icon {
+#ativos .ativo-card .icon {
   width: 25px;
   height: 15px;
 }
-#ativos .ativos-card .ativo-card .icon.cripto {
+#ativos .ativo-card .icon.cripto {
   width: 15px;
   height: 15px;
 }
@@ -513,62 +383,6 @@ body {
 
 #entrada {
   background: #000000;
-}
-#entrada header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  background: rgba(0, 0, 0, 0.3);
-}
-#entrada header .status {
-  align-items: center;
-  font-size: 8px;
-  font-weight: 300;
-  text-align: left;
-  color: var(--status-color);
-}
-#entrada header .status .status-adjust {
-  align-items: center;
-  justify-content: flex-start;
-}
-#entrada header .status .status-active {
-  font-size: 12px;
-  color: #FFFFFF;
-  font-weight: 400;
-}
-#entrada header .status .status-indicator {
-  width: 5px;
-  height: 5px;
-  background-color: var(--primary-color);
-  border-radius: 50%;
-  margin-left: 5px;
-}
-#entrada header .logo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transform: translateX(-20%);
-}
-#entrada header .logo img {
-  width: 80px;
-  /* Ajuste conforme necessário */
-}
-#entrada header .logo small {
-  font-size: 10px;
-  color: var(--secondary-color);
-  margin-top: -5px;
-}
-#entrada header .logout button {
-  background: transparent;
-  border: none;
-}
-#entrada header .logout button img {
-  filter: brightness(0.8);
-  transition: filter 0.3s;
-}
-#entrada header .logout button img:hover {
-  filter: brightness(1);
 }
 #entrada h2 {
   font-size: 12px;
@@ -708,112 +522,31 @@ body {
 #bolt-ia {
   background: url("./../assets/images/background-verification.webp") no-repeat center center/cover;
 }
-#bolt-ia header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  background: rgba(0, 0, 0, 0.3);
-}
-#bolt-ia header .status {
-  align-items: center;
-  font-size: 8px;
-  font-weight: 300;
-  text-align: left;
-  color: var(--status-color);
-}
-#bolt-ia header .status .status-adjust {
-  align-items: center;
-  justify-content: flex-start;
-}
-#bolt-ia header .status .status-active {
-  font-size: 12px;
-  color: #FFFFFF;
-  font-weight: 400;
-}
-#bolt-ia header .status .status-indicator {
-  width: 5px;
-  height: 5px;
-  background-color: var(--primary-color);
-  border-radius: 50%;
-  margin-left: 5px;
-}
-#bolt-ia header .logo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transform: translateX(-20%);
-}
-#bolt-ia header .logo img {
-  width: 80px;
-  /* Ajuste conforme necessário */
-}
-#bolt-ia header .logo small {
-  font-size: 10px;
-  color: var(--secondary-color);
-  margin-top: -5px;
-}
-#bolt-ia header .logout button {
-  background: transparent;
-  border: none;
-}
-#bolt-ia header .logout button img {
-  filter: brightness(0.8);
-  transition: filter 0.3s;
-}
-#bolt-ia header .logout button img:hover {
-  filter: brightness(1);
-}
-#bolt-ia .bolt-ia-card {
-  position: relative;
-  background: rgba(20, 20, 20, 0.8);
-  border-radius: var(--border-radius);
-  color: var(--secondary-color);
-  max-width: 400px;
-  width: 100%;
-  padding: 30px;
-  z-index: 1;
-}
-#bolt-ia .bolt-ia-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: var(--border-radius);
-  padding: 1px;
-  background: linear-gradient(180deg, #242424 0%, #666666 100%);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  z-index: -1;
-}
-#bolt-ia .bolt-ia-card h2 {
+#bolt-ia h2 {
   font-size: 16px;
   font-weight: 500;
   color: #fff;
 }
-#bolt-ia .bolt-ia-card p {
+#bolt-ia p {
   font-size: 12px;
   font-weight: 400;
   color: #B9B9B9;
 }
-#bolt-ia .bolt-ia-card p b {
+#bolt-ia p b {
   color: #FFFFFF;
 }
-#bolt-ia .bolt-ia-card p.text-primary {
+#bolt-ia p.text-primary {
   color: #FFFFFF !important;
 }
-#bolt-ia .bolt-ia-card p.text-primary .highlight {
+#bolt-ia p.text-primary .highlight {
   font-weight: 400;
   color: var(--primary-color);
 }
-#bolt-ia .bolt-ia-card .benefits {
+#bolt-ia .benefits {
   display: flex;
   justify-content: space-between;
 }
-#bolt-ia .bolt-ia-card .benefits .benefit-item {
+#bolt-ia .benefits .benefit-item {
   background: var(--dark-bg);
   border: 1px solid var(--input-border);
   border-radius: 6px;
@@ -828,34 +561,34 @@ body {
   display: inline-flex;
   align-items: center;
 }
-#bolt-ia .bolt-ia-card .benefits .benefit-item:first-child {
+#bolt-ia .benefits .benefit-item:first-child {
   margin-left: 0;
 }
-#bolt-ia .bolt-ia-card .benefits .benefit-item:last-child {
+#bolt-ia .benefits .benefit-item:last-child {
   margin-right: 0;
 }
-#bolt-ia .bolt-ia-card .benefits .benefit-item .icon {
+#bolt-ia .benefits .benefit-item .icon {
   width: 12px;
   height: 12px;
 }
-#bolt-ia .bolt-ia-card .benefits .benefit-item p {
+#bolt-ia .benefits .benefit-item p {
   margin: 0;
   font-size: 10px;
   font-weight: 400;
   line-height: 10px;
 }
-#bolt-ia .bolt-ia-card .benefits .benefit-item p strong {
+#bolt-ia .benefits .benefit-item p strong {
   font-weight: 600;
   color: var(--primary-color);
 }
-#bolt-ia .bolt-ia-card .btn-primary {
+#bolt-ia .btn-primary {
   background-color: var(--primary-color);
   border-color: var(--primary-color);
   color: #141414;
   font-size: 14px;
   font-weight: 600;
 }
-#bolt-ia .bolt-ia-card .btn-primary:hover {
+#bolt-ia .btn-primary:hover {
   background-color: var(--btn-hover-color);
   border-color: var(--btn-hover-color);
 }
@@ -869,6 +602,92 @@ body {
   border: 1px solid var(--primary-color);
 }
 #bolt-ia .btn-link-atlas:hover {
+  color: var(--btn-hover-color);
+}
+
+#historico {
+  background: url("./../assets/images/background-verification.webp") no-repeat center center/cover;
+}
+#historico h2 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+}
+#historico p {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--secondary-color);
+}
+#historico .historico-list .historico-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--input-border);
+  padding: 10px 0;
+}
+#historico .historico-list .historico-item:last-child {
+  border-bottom: none;
+}
+#historico .historico-list .historico-item .time {
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--secondary-color);
+}
+#historico .historico-list .historico-item .time small {
+  display: block;
+  font-size: 8px;
+  color: var(--input-border);
+}
+#historico .historico-list .historico-item .moeda {
+  display: flex;
+  align-items: center;
+}
+#historico .historico-list .historico-item .moeda .icon {
+  width: 14px;
+  height: 14px;
+}
+#historico .historico-list .historico-item .moeda span {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+#historico .historico-list .historico-item .resultado {
+  font-size: 12px;
+  font-weight: 600;
+}
+#historico .historico-list .historico-item .resultado.text-success {
+  color: var(--success-color);
+}
+#historico .historico-list .historico-item .resultado.text-danger {
+  color: var(--danger-color);
+}
+#historico .moeda-assertiva {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--dark-bg);
+  border: 1px solid var(--input-border);
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--secondary-color);
+}
+#historico .moeda-assertiva .icon {
+  width: 14px;
+  height: 14px;
+}
+#historico .moeda-assertiva .text-success {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--success-color);
+}
+#historico .btn-abrir-atlas {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+#historico .btn-abrir-atlas:hover {
   color: var(--btn-hover-color);
 }
 
