@@ -268,7 +268,7 @@ input:not([type="checkbox"]) {
         padding-bottom: .8rem;
     }
 
-    
+
 
     label {
         font-size: 12px;
@@ -630,13 +630,13 @@ input:not([type="checkbox"]) {
     background: url('./../assets/images/background-verification.webp') no-repeat center center/cover;
 
     h2 {
-        font-size: 16px;
+        font-size: 18px;
         font-weight: 500;
         color: #fff;
     }
 
     p {
-        font-size: 12px;
+        font-size: 14px;
         font-weight: 400;
         color: #B9B9B9;
 
@@ -652,11 +652,16 @@ input:not([type="checkbox"]) {
                 color: var(--primary-color);
             }
         }
+
+        &.text-secundary {
+            font-size: 12px;
+        }
     }
 
     .benefits {
         display: flex;
         justify-content: space-between;
+        margin-bottom: 1.2rem;
 
 
         .benefit-item {
@@ -684,7 +689,8 @@ input:not([type="checkbox"]) {
 
             .icon {
                 width: 12px;
-                height: 12px;
+                height: 24px;
+                margin-right: 1px;
             }
 
             p {
@@ -699,7 +705,26 @@ input:not([type="checkbox"]) {
                 }
             }
         }
+
+        @media screen and (max-width:320px) {
+            display: block;
+            margin-bottom: 0;
+
+            .benefit-item {
+                margin: 0rem auto 0.5rem auto !important;
+                padding: 6px 8px;
+                min-height: 42px;
+                min-width: 10rem;
+
+                .icon {
+                    margin-right: 6px;
+                }
+            }
+        }
     }
+
+
+
 }
 
 #historico {

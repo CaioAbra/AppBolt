@@ -531,12 +531,12 @@ input:not([type=checkbox]):focus {
   background: url("./../assets/images/background-verification.webp") no-repeat center center/cover;
 }
 #bolt-ia h2 {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
   color: #fff;
 }
 #bolt-ia p {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 400;
   color: #B9B9B9;
 }
@@ -550,9 +550,13 @@ input:not([type=checkbox]):focus {
   font-weight: 400;
   color: var(--primary-color);
 }
+#bolt-ia p.text-secundary {
+  font-size: 12px;
+}
 #bolt-ia .benefits {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 1.2rem;
 }
 #bolt-ia .benefits .benefit-item {
   background: var(--dark-bg);
@@ -577,7 +581,8 @@ input:not([type=checkbox]):focus {
 }
 #bolt-ia .benefits .benefit-item .icon {
   width: 12px;
-  height: 12px;
+  height: 24px;
+  margin-right: 1px;
 }
 #bolt-ia .benefits .benefit-item p {
   margin: 0;
@@ -588,6 +593,21 @@ input:not([type=checkbox]):focus {
 #bolt-ia .benefits .benefit-item p strong {
   font-weight: 600;
   color: var(--primary-color);
+}
+@media screen and (max-width: 320px) {
+  #bolt-ia .benefits {
+    display: block;
+    margin-bottom: 0;
+  }
+  #bolt-ia .benefits .benefit-item {
+    margin: 0rem auto 0.5rem auto !important;
+    padding: 6px 8px;
+    min-height: 42px;
+    min-width: 10rem;
+  }
+  #bolt-ia .benefits .benefit-item .icon {
+    margin-right: 6px;
+  }
 }
 
 #historico {
