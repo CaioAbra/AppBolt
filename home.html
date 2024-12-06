@@ -51,7 +51,7 @@
             </button>
             <button type="button" class="btn btn-secondary">M1</button>
             <button type="button" class="btn btn-primary">
-                <img src="./static/assets/images/bolt-icon.webp" alt="Bolt Icon" class="icon mr-1"> Bolt IA
+                <img src="./static/assets/images/bolt-icon.webp" alt="Bolt Icon" class="icon mr-1 icon-bolt"> Bolt IA
             </button>
         </div>
 
@@ -60,28 +60,37 @@
         <form>
             <div class="row">
                 <div class="col-6 pr-1">
-                    <div class="form-group">
-                        <input type="text" class="form-control" value="Proteções:" >
+                    <div class="form-group d-flex justify-content-between align-items-center">
+                        <label>Proteções:</label>
+                        <span class="value">--</span>
                     </div>
                 </div>
                 <div class="col-6 pl-1">
-                    <div class="form-group">
-                        <input type="text" class="form-control" value="Ações:" >
+                    <div class="form-group d-flex justify-content-between align-items-center">
+                        <label>Ações:</label>
+                        <button type="button" class="btn btn-link value d-flex align-items-center p-0">
+                            --
+                        </button>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-6 pr-1">
-                    <div class="form-group">
-                        <input type="text" class="form-control" value="Válido até:" >
+                    <div class="form-group d-flex justify-content-between align-items-center">
+                        <label>Válido até:</label>
+                        <span class="value">--</span>
                     </div>
                 </div>
                 <div class="col-6 pl-1">
-                    <div class="form-group">
-                        <input type="text" class="form-control" value="Assertividade:" >
+                    <div class="form-group d-flex justify-content-between align-items-center">
+                        <label>Assertividade:</label>
+                        <span class="value">--</span>
                     </div>
                 </div>
             </div>
+
+
+
             <button type="submit" class="btn btn-primary btn-block">Gerar Sinal</button>
         </form>
 
