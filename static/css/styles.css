@@ -670,7 +670,7 @@ input:not([type=checkbox]):focus {
   font-weight: 400;
 }
 #historico .coin-acertive-card {
-  display: inline-flex;
+  display: flex;
   text-align: center;
   align-items: center;
   justify-content: space-between;
