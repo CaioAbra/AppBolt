@@ -395,7 +395,7 @@ input:not([type="checkbox"]) {
     background: #000000;
 
     h2 {
-        font-size: 12px;
+        font-size: 14px;
         font-weight: 400;
         color: #B9B9B9;
         text-align: center;
@@ -410,14 +410,13 @@ input:not([type="checkbox"]) {
         margin: 0 auto;
     }
 
-
     .btn-group {
 
         .btn {
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 12px;
+            font-size: 14px;
             font-weight: 400;
             border: 1px solid var(--input-border);
             border-radius: 6px;
@@ -430,6 +429,11 @@ input:not([type="checkbox"]) {
             .icon {
                 width: 18px;
                 height: 18px;
+
+                &.icon-bolt {
+                    width: 10px;
+                    height: 20.56px;
+                }
             }
 
 
@@ -451,11 +455,6 @@ input:not([type="checkbox"]) {
             &.btn-primary {
                 background-color: #FFFFFF;
                 color: #141414;
-                // border-color: var(--primary-color);
-
-                // &:hover {
-                //     background-color: var(--btn-hover-color);
-                // }
             }
 
             &.btn-desactive {
@@ -481,17 +480,18 @@ input:not([type="checkbox"]) {
             border-radius: 6px;
             padding: 8px 12px;
             margin-bottom: 7px;
+            min-height: 42px;
 
             label {
-                font-size: 12px;
-                font-weight: 400;
+                font-size: 14px;
+                font-weight: 400 !important;
                 color: #B9B9B9;
                 margin-bottom: 0;
             }
 
             .value {
-                font-size: 10px;
-                font-weight: 300;
+                font-size: 14px;
+                font-weight: 300 !important;
                 color: #FFFFFF;
             }
 
@@ -526,7 +526,7 @@ input:not([type="checkbox"]) {
             overflow: hidden;
             position: relative;
             padding: 0;
-            height: 40px;
+            height: 42px;
             /* Ajuste conforme necessário */
             width: 100%;
 
@@ -534,10 +534,16 @@ input:not([type="checkbox"]) {
                 background: lighten(#B9B9B9, 5%);
             }
 
+            &.loading,
+            &:disabled {
+                cursor: not-allowed; // Desativa o clique
+                background: #B9B9B9; // Cor cinza enquanto carregando
+                opacity: 1 !important;
+            }
+
             .btn-left {
                 background-color: var(--primary-color);
-                width: 30.5%;
-                /* Proporção da área laranja */
+                width: 0%;
                 height: 100%;
                 position: absolute;
                 left: 0;
@@ -557,17 +563,44 @@ input:not([type="checkbox"]) {
     }
 
     .list-win {
+        overflow: hidden; // Esconde itens fora do contêiner
+        max-height: 80px; // Altura visível da lista
+        position: relative;
+
         p {
             font-size: 10px;
             font-weight: 300;
             color: #B9B9B9;
             margin-bottom: 0px;
+            transform: translateY(100%); // Posicionado fora da área visível
+            opacity: 0; // Começa invisível
+            transition: opacity 1s ease, transform 1s ease; // Suaviza o movimento
 
             span {
                 color: var(--primary-color);
             }
         }
+
+        &.animating p {
+            opacity: 1; // Faz os itens aparecerem
+            transform: translateY(0); // Move para a posição original
+        }
+
+        &.scrolling p {
+            animation: scroll-up 10s linear infinite; // Faz os itens subirem continuamente
+        }
     }
+
+    @keyframes scroll-up {
+        0% {
+            transform: translateY(0); // Posição inicial
+        }
+
+        100% {
+            transform: translateY(-100%); // Move os itens completamente para cima
+        }
+    }
+
 }
 
 #bolt-ia {
