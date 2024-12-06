@@ -144,6 +144,40 @@ header .logout button img:hover {
   z-index: -1;
 }
 
+input:not([type=checkbox]) {
+  /* Estilos para todos os inputs, exceto checkbox */
+  background: var(--dark-bg);
+  border: 1px solid var(--input-border);
+  border-radius: 7.79px;
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--input-border);
+  transition: all var(--transition-speed) ease;
+  min-height: 42px;
+}
+input:not([type=checkbox]):focus {
+  background: #fff;
+  border: 1px solid var(--input-focus);
+  color: #141414;
+  font-weight: 400;
+  box-shadow: 0 0 0 1px var(--input-focus);
+}
+
+.btn.btn-primary.btn-block,
+.btn-primary.btn-block {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: #141414;
+  font-size: 14px;
+  font-weight: 600;
+  min-height: 46px;
+}
+.btn.btn-primary.btn-block:hover,
+.btn-primary.btn-block:hover {
+  background-color: var(--btn-hover-color);
+  border-color: var(--btn-hover-color);
+}
+
 /* ===========================
    ESTILOS ESPECÍFICOS DAS PÁGINAS
 =========================== */
@@ -151,45 +185,14 @@ header .logout button img:hover {
   background: url("./../assets/images/background-login.webp") no-repeat center center/cover;
 }
 #login h2 {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 300;
   color: var(--secondary-color);
-}
-#login img {
-  width: 83px;
-  height: 45.79px;
 }
 #login label {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 300;
   color: var(--secondary-color);
-}
-#login input {
-  background: var(--dark-bg);
-  border: 1px solid var(--input-border);
-  border-radius: 6px;
-  font-size: 10px;
-  font-weight: 300;
-  color: var(--input-border);
-  transition: all var(--transition-speed) ease;
-}
-#login input:focus {
-  background: #fff;
-  border: 1px solid var(--input-focus);
-  color: #141414;
-  font-weight: 400;
-  box-shadow: 0 0 0 1px var(--input-focus);
-}
-#login .btn-primary {
-  background-color: var(--primary-color);
-  border-color: var(--primary-color);
-  color: #141414;
-  font-size: 14px;
-  font-weight: 600;
-}
-#login .btn-primary:hover {
-  background-color: var(--btn-hover-color);
-  border-color: var(--btn-hover-color);
 }
 
 #verificacao {
@@ -212,36 +215,6 @@ header .logout button img:hover {
 }
 #verificacao .form-group {
   margin-bottom: 0.5rem;
-}
-#verificacao input {
-  background: var(--dark-bg);
-  border: 1px solid var(--input-border);
-  border-radius: 6px;
-  font-size: 10px;
-  font-weight: 300;
-  color: var(--input-border);
-  transition: all var(--transition-speed) ease;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  height: 100%;
-}
-#verificacao input:focus {
-  background: #fff;
-  border: 1px solid var(--input-focus);
-  color: #141414;
-  font-weight: 400;
-  box-shadow: 0 0 0 1px var(--input-focus);
-}
-#verificacao .btn-primary {
-  background-color: var(--primary-color);
-  border-color: var(--primary-color);
-  color: #141414;
-  font-size: 14px;
-  font-weight: 600;
-}
-#verificacao .btn-primary:hover {
-  background-color: var(--btn-hover-color);
-  border-color: var(--btn-hover-color);
 }
 
 #home {
@@ -304,31 +277,6 @@ header .logout button img:hover {
 }
 #home form .form-group {
   margin-bottom: 8px;
-}
-#home form .form-group input {
-  background: var(--dark-bg);
-  border: 1px solid var(--input-border);
-  border-radius: 6px;
-  font-size: 10px;
-  font-weight: 300;
-  color: var(--input-border);
-  padding: 10px;
-}
-#home form .form-group input:focus {
-  background: #fff;
-  border: 1px solid var(--input-focus);
-  color: #141414;
-}
-#home form .btn-primary {
-  background-color: var(--primary-color);
-  border-color: var(--primary-color);
-  color: #141414;
-  font-size: 14px;
-  font-weight: 600;
-}
-#home form .btn-primary:hover {
-  background-color: var(--btn-hover-color);
-  border-color: var(--btn-hover-color);
 }
 #home .btn-link-atlas {
   display: flex;
@@ -580,17 +528,6 @@ header .logout button img:hover {
 #bolt-ia .benefits .benefit-item p strong {
   font-weight: 600;
   color: var(--primary-color);
-}
-#bolt-ia .btn-primary {
-  background-color: var(--primary-color);
-  border-color: var(--primary-color);
-  color: #141414;
-  font-size: 14px;
-  font-weight: 600;
-}
-#bolt-ia .btn-primary:hover {
-  background-color: var(--btn-hover-color);
-  border-color: var(--btn-hover-color);
 }
 #bolt-ia .btn-link-atlas {
   display: flex;

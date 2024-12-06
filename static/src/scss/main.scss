@@ -129,6 +129,7 @@ header {
     -webkit-transform: translateZ(0);
     /* Soluciona possíveis bugs de renderização */
     -webkit-overflow-scrolling: touch;
+
     /* Suporte a rolagem suave no iOS */
     /* Efeito de gradiente na borda */
     &::before {
@@ -158,6 +159,41 @@ header {
     }
 }
 
+input:not([type="checkbox"]) {
+    /* Estilos para todos os inputs, exceto checkbox */
+    background: var(--dark-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 7.79px;
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--input-border);
+    transition: all var(--transition-speed) ease;
+    min-height: 42px;
+
+    &:focus {
+        background: #fff;
+        border: 1px solid var(--input-focus);
+        color: #141414;
+        font-weight: 400;
+        box-shadow: 0 0 0 1px var(--input-focus);
+    }
+}
+
+.btn.btn-primary.btn-block,
+.btn-primary.btn-block {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #141414;
+    font-size: 14px;
+    font-weight: 600;
+    min-height: 46px;
+
+    &:hover {
+        background-color: var(--btn-hover-color);
+        border-color: var(--btn-hover-color);
+    }
+}
+
 /* ===========================
    ESTILOS ESPECÍFICOS DAS PÁGINAS
 =========================== */
@@ -165,53 +201,16 @@ header {
     background: url('./../assets/images/background-login.webp') no-repeat center center/cover;
 
     h2 {
-        font-size: 20px;
+        font-size: 24px;
         font-weight: 300;
         color: var(--secondary-color);
-    }
-
-    img {
-        width: 83px;
-        height: 45.79px;
     }
 
     label {
-        font-size: 12px;
+        font-size: 14px;
         font-weight: 300;
         color: var(--secondary-color);
     }
-
-    input {
-        background: var(--dark-bg);
-        border: 1px solid var(--input-border);
-        border-radius: 6px;
-        font-size: 10px;
-        font-weight: 300;
-        color: var(--input-border);
-        transition: all var(--transition-speed) ease;
-
-        &:focus {
-            background: #fff;
-            border: 1px solid var(--input-focus);
-            color: #141414;
-            font-weight: 400;
-            box-shadow: 0 0 0 1px var(--input-focus);
-        }
-    }
-
-    .btn-primary {
-        background-color: var(--primary-color);
-        border-color: var(--primary-color);
-        color: #141414;
-        font-size: 14px;
-        font-weight: 600;
-
-        &:hover {
-            background-color: var(--btn-hover-color);
-            border-color: var(--btn-hover-color);
-        }
-    }
-
 }
 
 #verificacao {
@@ -238,42 +237,6 @@ header {
     .form-group {
         margin-bottom: .5rem;
     }
-
-    input {
-        background: var(--dark-bg);
-        border: 1px solid var(--input-border);
-        border-radius: 6px;
-        font-size: 10px;
-        font-weight: 300;
-        color: var(--input-border);
-        transition: all var(--transition-speed) ease;
-        padding-top: 12px;
-        padding-bottom: 12px;
-        height: 100%;
-
-        &:focus {
-            background: #fff;
-            border: 1px solid var(--input-focus);
-            color: #141414;
-            font-weight: 400;
-            box-shadow: 0 0 0 1px var(--input-focus);
-        }
-    }
-
-    .btn-primary {
-        background-color: var(--primary-color);
-        border-color: var(--primary-color);
-        color: #141414;
-        font-size: 14px;
-        font-weight: 600;
-
-        &:hover {
-            background-color: var(--btn-hover-color);
-            border-color: var(--btn-hover-color);
-        }
-    }
-
-
 }
 
 #home {
@@ -348,36 +311,8 @@ header {
 
         .form-group {
             margin-bottom: 8px;
-
-            input {
-                background: var(--dark-bg);
-                border: 1px solid var(--input-border);
-                border-radius: 6px;
-                font-size: 10px;
-                font-weight: 300;
-                color: var(--input-border);
-                padding: 10px;
-
-                &:focus {
-                    background: #fff;
-                    border: 1px solid var(--input-focus);
-                    color: #141414;
-                }
-            }
         }
 
-        .btn-primary {
-            background-color: var(--primary-color);
-            border-color: var(--primary-color);
-            color: #141414;
-            font-size: 14px;
-            font-weight: 600;
-
-            &:hover {
-                background-color: var(--btn-hover-color);
-                border-color: var(--btn-hover-color);
-            }
-        }
     }
 
     .btn-link-atlas {
@@ -704,21 +639,6 @@ header {
             }
         }
     }
-
-
-    .btn-primary {
-        background-color: var(--primary-color);
-        border-color: var(--primary-color);
-        color: #141414;
-        font-size: 14px;
-        font-weight: 600;
-
-        &:hover {
-            background-color: var(--btn-hover-color);
-            border-color: var(--btn-hover-color);
-        }
-    }
-
 
     .btn-link-atlas {
         display: flex;
