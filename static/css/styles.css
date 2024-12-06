@@ -111,7 +111,8 @@ header .logout button img:hover {
 .verification-card,
 .ativos-card,
 .bolt-ia-card,
-.historico-card {
+.historico-card,
+.coin-acertive-card {
   position: relative;
   background: rgba(20, 20, 20, 0.8);
   /* Transparência */
@@ -140,7 +141,8 @@ header .logout button img:hover {
 .verification-card::before,
 .ativos-card::before,
 .bolt-ia-card::before,
-.historico-card::before {
+.historico-card::before,
+.coin-acertive-card::before {
   content: "";
   position: absolute;
   top: 0;
@@ -614,14 +616,14 @@ input:not([type=checkbox]):focus {
   background: url("./../assets/images/background-verification.webp") no-repeat center center/cover;
 }
 #historico h2 {
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 18px;
+  font-weight: 500;
   color: #fff;
 }
 #historico p {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 400;
-  color: var(--secondary-color);
+  color: #B9B9B9;
 }
 #historico .historico-list .historico-item {
   display: flex;
@@ -630,18 +632,15 @@ input:not([type=checkbox]):focus {
   border-bottom: 1px solid var(--input-border);
   padding: 10px 0;
 }
-#historico .historico-list .historico-item:last-child {
-  border-bottom: none;
-}
 #historico .historico-list .historico-item .time {
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 400;
-  color: var(--secondary-color);
+  color: #FFFFFF;
 }
 #historico .historico-list .historico-item .time small {
   display: block;
-  font-size: 8px;
-  color: var(--input-border);
+  font-size: 10px;
+  color: #B9B9B9;
 }
 #historico .historico-list .historico-item .moeda {
   display: flex;
@@ -653,47 +652,38 @@ input:not([type=checkbox]):focus {
 }
 #historico .historico-list .historico-item .moeda span {
   font-size: 12px;
-  font-weight: 600;
-  color: var(--secondary-color);
+  font-weight: 400;
+  color: #FFFFFF;
 }
 #historico .historico-list .historico-item .resultado {
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 400;
 }
 #historico .historico-list .historico-item .resultado.text-success {
-  color: var(--success-color);
+  color: #2AD266 !important;
 }
 #historico .historico-list .historico-item .resultado.text-danger {
   color: var(--danger-color);
 }
-#historico .moeda-assertiva {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: var(--dark-bg);
-  border: 1px solid var(--input-border);
-  border-radius: 6px;
-  padding: 10px;
-  font-size: 10px;
+#historico .last-time {
+  color: #5F5F5F;
   font-weight: 400;
-  color: var(--secondary-color);
 }
-#historico .moeda-assertiva .icon {
-  width: 14px;
-  height: 14px;
+#historico .coin-acertive-card {
+  display: inline-flex;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
 }
-#historico .moeda-assertiva .text-success {
+#historico .coin-acertive-card img {
+  width: 30px;
+  height: 30px;
+}
+#historico .coin-acertive-card p {
   font-size: 12px;
-  font-weight: 600;
-  color: var(--success-color);
-}
-#historico .btn-abrir-atlas {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--primary-color);
-}
-#historico .btn-abrir-atlas:hover {
-  color: var(--btn-hover-color);
+  margin: 0;
+  font-weight: 400;
+  color: #FFFFFF;
 }
 
 /*# sourceMappingURL=styles.css.map */

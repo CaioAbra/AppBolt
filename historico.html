@@ -14,8 +14,8 @@
 
 <body id="historico">
     <!-- Header -->
-    <header class="d-flex justify-content-between align-items-center px-4 py-2">
-        <div class="status d-flex align-items-center">
+    <header class="">
+        <div class="status">
             <span>Status Bolt</span>
             <div class="d-flex text-left status-adjust">
                 <span class="status-active mr-1">Ativo</span>
@@ -24,48 +24,101 @@
         </div>
         <div class="logo">
             <img src="./static/assets/images/bolt-logo.webp" alt="Bolt Logo">
+            <!-- <small>Powered by Atlas</small> -->
         </div>
         <div class="logout">
             <button class="btn btn-link p-0">
-                <img src="./static/assets/images/power-icon.webp" alt="Logout" >
+                <img src="./static/assets/images/power-icon.webp" alt="Logout">
             </button>
         </div>
     </header>
 
-    <!-- Card Principal -->
-    <div class="container d-flex justify-content-center align-items-center vh-100">
-        <div class="historico-card text-center p-4">
-            <h2 class="mb-3">Histórico de Sinais</h2>
-            <p class="text-secondary mb-4">
-                Veja o resultado das outras moedas nesse último sinal
-            </p>
+    <!-- Histórico Card -->
+    <div class="container py-4">
+        <div class="historico-card text-center mx-auto">
+            <h2>Histórico de Sinais</h2>
+            <p>Veja o resultado das outras<br>
+                moedas nesse último sinal</p>
+
             <div class="historico-list">
-                <div class="historico-item d-flex justify-content-between align-items-center">
-                    <div class="time">00:01<br><small>03 Dez</small></div>
+                <!-- Repetição de itens -->
+                <div class="historico-item">
+                    <div class="time">
+                        <span>00:01</span>
+                        <small>03 Dez</small>
+                    </div>
                     <div class="moeda d-flex align-items-center">
-                        <img src="./static/assets/images/icon-btc.webp" alt="BTC Icon" class="icon mr-2">
+                        <img src="./static/assets/images/icon-btc.webp" alt="BTC" class="icon mr-2">
                         <span>BTC</span>
                     </div>
                     <div class="resultado text-success">+R$ 220,00</div>
                 </div>
-                <!-- Repita os itens aqui -->
-            </div>
-            <p class="text-secondary mt-4">Últimos 5 Minutos</p>
-        </div>
-    </div>
 
-    <!-- Moeda Mais Assertiva -->
-    <div class="container text-center mt-4 moeda-assertiva">
-        <div class="d-flex justify-content-between align-items-center">
-            <img src="./static/assets/images/icon-mcdonalds.webp" alt="McDonald's Icon" class="icon">
-            <span>Moeda mais assertiva<br>nos últimas 30 minutos.</span>
+                <div class="historico-item">
+                    <div class="time">
+                        <span>00:01</span>
+                        <small>03 Dez</small>
+                    </div>
+                    <div class="moeda d-flex align-items-center">
+                        <img src="./static/assets/images/icon-btc.webp" alt="BTC" class="icon mr-2">
+                        <span>BTC</span>
+                    </div>
+                    <div class="resultado text-success">+R$ 220,00</div>
+                </div>
+
+                <div class="historico-item">
+                    <div class="time">
+                        <span>00:01</span>
+                        <small>03 Dez</small>
+                    </div>
+                    <div class="moeda d-flex align-items-center">
+                        <img src="./static/assets/images/icon-btc.webp" alt="BTC" class="icon mr-2">
+                        <span>BTC</span>
+                    </div>
+                    <div class="resultado text-success">+R$ 220,00</div>
+                </div>
+
+                <div class="historico-item">
+                    <div class="time">
+                        <span>00:01</span>
+                        <small>03 Dez</small>
+                    </div>
+                    <div class="moeda d-flex align-items-center">
+                        <img src="./static/assets/images/icon-btc.webp" alt="BTC" class="icon mr-2">
+                        <span>BTC</span>
+                    </div>
+                    <div class="resultado text-success">+R$ 220,00</div>
+                </div>
+
+                <div class="historico-item">
+                    <div class="time">
+                        <span>00:01</span>
+                        <small>03 Dez</small>
+                    </div>
+                    <div class="moeda d-flex align-items-center">
+                        <img src="./static/assets/images/icon-btc.webp" alt="BTC" class="icon mr-2">
+                        <span>BTC</span>
+                    </div>
+                    <div class="resultado text-success">+R$ 220,00</div>
+                </div>
+                <!-- Copie o bloco acima para mais itens -->
+            </div>
+
+            <p class="d-block last-time mt-3 mb-0">Últimos 5 Minutos</p>
+        </div>
+
+        <!-- Moeda Mais Assertiva -->
+        <div class="coin-acertive-card mt-2  mx-auto">
+            <img src="./static/assets/images/mcdonalds-logo.webp" alt="McDonald's" class="icon">
+            <p>
+                Moeda mais assertiva<br>
+                nos últimas 30 minutos.
+            </p>
             <span class="text-success">+86%</span>
         </div>
-    </div>
 
-    <!-- Botão "Abrir Atlas" -->
-    <div class="container text-center mt-4">
-        <button class="btn btn-link btn-abrir-atlas">Abrir Atlas</button>
+        <!-- Link Secundário -->
+        <button class="btn btn-link-atlas mt-4 ml-auto ">Abrir Atlas</button>
     </div>
 
     <!-- jQuery -->
