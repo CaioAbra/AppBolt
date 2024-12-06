@@ -314,7 +314,7 @@ input:not([type=checkbox]):focus {
 #ativos .ativo-card {
   background: var(--dark-bg);
   border-radius: 6px;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 400;
   color: var(--secondary-color);
   padding: 10px 12px;
@@ -324,12 +324,12 @@ input:not([type=checkbox]):focus {
   transition: background-color var(--transition-speed);
 }
 #ativos .ativo-card .icon {
-  width: 25px;
-  height: 15px;
+  width: 30px;
+  height: 20px;
 }
 #ativos .ativo-card .icon.cripto {
-  width: 15px;
-  height: 15px;
+  width: 20px;
+  height: 20px;
 }
 #ativos .btn-link-atlas {
   display: flex;
