@@ -196,17 +196,23 @@ input:not([type=checkbox]):focus {
 .btn-link-atlas {
   display: flex;
   position: fixed;
-  bottom: 1rem; /* Espaço da parte inferior */
-  right: 1rem; /* Espaço da lateral direita */
+  bottom: 1rem;
+  /* Espaço da parte inferior */
+  right: 1rem;
+  /* Espaço da lateral direita */
   font-size: 12px;
   font-weight: 500;
   color: var(--primary-color);
-  background: var(--button-bg, transparent); /* Caso precise de fundo */
+  background: var(--button-bg, transparent);
+  /* Caso precise de fundo */
   border-radius: calc(var(--border-radius) / 2);
   border: 1px solid var(--primary-color);
-  padding: 0.5rem 1rem; /* Adiciona espaçamento interno */
-  z-index: 1000; /* Garante que estará acima de outros elementos */
-  transition: all 0.3s ease; /* Transição suave para hover */
+  padding: 0.5rem 1rem;
+  /* Adiciona espaçamento interno */
+  z-index: 1000;
+  /* Garante que estará acima de outros elementos */
+  transition: all 0.3s ease;
+  /* Transição suave para hover */
 }
 .btn-link-atlas:hover {
   color: var(--btn-hover-color);
@@ -346,6 +352,13 @@ input:not([type=checkbox]):focus {
   color: #B9B9B9;
   text-align: center;
   margin-bottom: 20px;
+}
+#entrada .gif-animado {
+  width: 100%;
+  max-width: 372px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 #entrada .btn-group .btn {
   display: flex;
