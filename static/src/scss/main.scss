@@ -93,12 +93,15 @@ header {
         background: transparent;
         border: none;
 
+
         img {
-            filter: brightness(0.8);
-            transition: filter 0.3s;
+            width: 14px;
+            height: 14px;
+            transition: filter 0.3s ease, transform 0.3s ease;
+            /* Transição suave */
 
             &:hover {
-                filter: brightness(1);
+                filter: brightness(0) saturate(100%) invert(43%) sepia(96%) saturate(696%) hue-rotate(14deg) brightness(102%) contrast(101%);
             }
         }
     }
