@@ -44,26 +44,28 @@ header {
 }
 header .status {
   align-items: center;
-  font-size: 8px;
+  font-size: 10px;
   font-weight: 300;
   text-align: left;
-  color: var(--status-color);
+  color: #B9B9B9;
 }
 header .status .status-adjust {
   align-items: center;
   justify-content: flex-start;
 }
 header .status .status-active {
-  font-size: 12px;
+  font-size: 14px;
   color: #FFFFFF;
   font-weight: 400;
 }
 header .status .status-indicator {
   width: 5px;
   height: 5px;
-  background-color: var(--primary-color);
+  background-color: #EF7A26;
   border-radius: 50%;
-  margin-left: 5px;
+  box-shadow: 0 0 8px rgba(239, 122, 38, 0.8);
+  /* Sombra suave */
+  animation: blink 1.5s infinite ease-in-out;
 }
 header .logo {
   display: flex;
@@ -92,6 +94,17 @@ header .logout button img:hover {
   filter: brightness(1);
 }
 
+/* Animação de piscada */
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 8px rgba(239, 122, 38, 0.8);
+  }
+  50% {
+    opacity: 0.3;
+    box-shadow: 0 0 4px rgba(239, 122, 38, 0.5);
+  }
+}
 .login-card,
 .verification-card,
 .ativos-card,
