@@ -321,6 +321,7 @@ input:not([type=checkbox]):focus {
   border-radius: 6px;
   padding: 8px 12px;
   transition: all var(--transition-speed);
+  min-height: 39px;
   /* Ícones */
   /* Botão Secundário (Preto com Bordas) */
   /* Botão Primário (Laranja) */

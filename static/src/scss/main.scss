@@ -356,6 +356,7 @@ input:not([type="checkbox"]) {
             border-radius: 6px;
             padding: 8px 12px;
             transition: all var(--transition-speed);
+            min-height: 39px;
 
             /* Ícones */
             .icon {

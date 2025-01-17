@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Bolt</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./static/libs/bootstrap/css/bootstrap.min.css">
+    <!-- Estilo CSS Compilado -->
+    <link rel="stylesheet" href="./static/css/styles.css">
+</head>
+
+<body id="home">
+    <!-- Header -->
+    <header class="">
+        <div class="status">
+            <span>Status Bolt</span>
+            <div class="d-flex text-left status-adjust">
+                <span class="status-active mr-1">Ativo</span>
+                <span class="status-indicator"></span>
+            </div>
+        </div>
+        <div class="logo">
+            <img src="./static/assets/images/bolt-logo.webp" alt="Bolt Logo">
+        </div>
+        <div class="logout">
+            <button class="btn btn-link p-0">
+                <img src="./static/assets/images/power-icon.webp" alt="Logout">
+            </button>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <div class="container d-flex flex-column justify-content-center align-items-center pt-4">
+        <h1>
+            Bem-vindo Joaozinho,
+        </h1>
+
+        <h3>
+            Pronto para fazer dinheiro?<br>
+            Escolha um ativo e o tempo de expiração.
+        </h3>
+
+        <!-- Botões de Opções -->
+        <div class="btn-group my-3" role="group">
+            <button type="button" class="btn btn-secondary">Histórico</button>
+            <button type="button" class="btn btn-secondary">
+                <img src="./static/assets/images/bitcoin-icon.webp" alt="BTC Icon" class="icon mr-1"> BTC
+            </button>
+            <button type="button" class="btn btn-secondary">M1</button>
+            <button type="button" class="btn btn-primary">
+                <img src="./static/assets/images/bolt-icon.webp" alt="Bolt Icon" class="icon mr-1 icon-bolt"> Bolt IA
+            </button>
+        </div>
+
+
+        <!-- Formulário -->
+        <form>
+            <div class="row">
+                <div class="col-6 pr-1">
+                    <div class="form-group d-flex justify-content-between align-items-center">
+                        <label>Proteções:</label>
+                        <span class="value">--</span>
+                    </div>
+                </div>
+                <div class="col-6 pl-1">
+                    <div class="form-group d-flex justify-content-between align-items-center">
+                        <label>Ações:</label>
+                        <button type="button" class="btn btn-link value d-flex align-items-center p-0">
+                            --
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 pr-1">
+                    <div class="form-group d-flex justify-content-between align-items-center">
+                        <label>Válido até:</label>
+                        <span class="value">--</span>
+                    </div>
+                </div>
+                <div class="col-6 pl-1">
+                    <div class="form-group d-flex justify-content-between align-items-center">
+                        <label>Assertividade:</label>
+                        <span class="value">--</span>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <button type="submit" class="btn btn-realizar generation-button">
+                <span class="btn-left"></span>
+                <span class="btn-text">Gerar Sinal</span>
+            </button>
+        </form>
+
+
+        <!-- Link Secundário -->
+        <button class="btn btn-link-atlas">Abrir Atlas</button>
+    </div>
+
+    <!-- jQuery -->
+    <script src="./static/libs/jquery/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="./static/libs/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Custom Scripts -->
+    <script src="./static/src/js/scripts.js"></script>
+</body>
+
+</html>

@@ -10,11 +10,33 @@
     <link rel="stylesheet" href="./static/libs/bootstrap/css/bootstrap.min.css">
     <!-- Estilo CSS Compilado -->
     <link rel="stylesheet" href="./static/css/styles.css">
+
+    <style>
+        /* Exemplo de estilo do botão "Gerar Sinal" */
+        .btn-left {
+            background: linear-gradient(to right, #da880d, #da8600);
+            display: inline-block;
+            height: 100%;
+            transition: width 0.4s ease-out;
+        }
+
+        .btn-realizar {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-text {
+            position: relative;
+            z-index: 2;
+        }
+    </style>
+
+
 </head>
 
 <body id="home">
     <!-- Header -->
-    <header class="">
+    <header>
         <div class="status">
             <span>Status Bolt</span>
             <div class="d-flex text-left status-adjust">
@@ -23,52 +45,67 @@
             </div>
         </div>
         <div class="logo">
-            <img src="./static/assets/images/bolt-logo.webp" alt="Bolt Logo">
+            <img src="/static/assets/images/bolt-logo.webp" alt="Bolt Logo" />
         </div>
         <div class="logout">
             <button class="btn btn-link p-0">
-                <img src="./static/assets/images/power-icon.webp" alt="Logout">
+                <img src="/static/assets/images/power-icon.webp" alt="Logout" />
             </button>
         </div>
     </header>
 
     <!-- Conteúdo Principal -->
     <div class="container d-flex flex-column justify-content-center align-items-center pt-4">
-        <h1>
-            Bem-vindo Joaozinho,
+        <!-- H1 inicialmente oculto -->
+        <h1 id="welcomeMsg" style="display: none;">
+            Bem-vindo <span id="usernameSpan"></span>,
         </h1>
 
-        <h3>
-            Pronto para fazer dinheiro?<br>
-            Escolha um ativo e o tempo de expiração.
-        </h3>
+        <h3>Pronto para fazer dinheiro?<br />Escolha um ativo e o tempo de expiração.</h3>
 
         <!-- Botões de Opções -->
         <div class="btn-group my-3" role="group">
-            <button type="button" class="btn btn-secondary">Histórico</button>
-            <button type="button" class="btn btn-secondary">
-                <img src="./static/assets/images/bitcoin-icon.webp" alt="BTC Icon" class="icon mr-1"> BTC
+            <button type="button" class="btn btn-secondary" onclick="window.location.href='/historico'">
+                Histórico
             </button>
-            <button type="button" class="btn btn-secondary">M1</button>
-            <button type="button" class="btn btn-primary">
-                <img src="./static/assets/images/bolt-icon.webp" alt="Bolt Icon" class="icon mr-1 icon-bolt"> Bolt IA
+            <!-- Botão do ativo selecionado (redireciona para ativos.html) -->
+            <button id="selectedAssetBtn" type="button" class="btn btn-secondary">
+                <img src="/static/assets/images/bitcoin-icon.webp" alt="BTC Icon" class="icon mr-1" />
+                BTC
+            </button>
+
+            <!-- Drop-down para selecionar Timeframe -->
+            <div class="form-group mb-0 ml-2">
+                <label for="timeframeSelect" class="sr-only">Timeframe</label>
+                <select id="timeframeSelect" class="form-control btn btn-secondary">
+                    <option value="M1">M1</option>
+                    <option value="M5">M5</option>
+                    <option value="M15">M15</option>
+                </select>
+            </div>
+
+            <!-- Botão Bolt IA para abrir o modal -->
+            <button type="button" class="btn btn-primary ml-2" data-toggle="modal" data-target="#boltIAModal">
+                <img src="/static/assets/images/bolt-icon.webp" alt="Bolt Icon" class="icon mr-1 icon-bolt" />
+                Bolt IA
             </button>
         </div>
-
 
         <!-- Formulário -->
         <form>
             <div class="row">
                 <div class="col-6 pr-1">
+                    <!-- Proteções -->
                     <div class="form-group d-flex justify-content-between align-items-center">
                         <label>Proteções:</label>
-                        <span class="value">--</span>
+                        <span class="value" id="protecoesValue">--</span>
                     </div>
                 </div>
                 <div class="col-6 pl-1">
+                    <!-- Ações -->
                     <div class="form-group d-flex justify-content-between align-items-center">
                         <label>Ações:</label>
-                        <button type="button" class="btn btn-link value d-flex align-items-center p-0">
+                        <button type="button" class="btn btn-link value d-flex align-items-center p-0" id="acoesValue">
                             --
                         </button>
                     </div>
@@ -76,38 +113,188 @@
             </div>
             <div class="row">
                 <div class="col-6 pr-1">
+                    <!-- Válido até -->
                     <div class="form-group d-flex justify-content-between align-items-center">
                         <label>Válido até:</label>
-                        <span class="value">--</span>
+                        <span class="value" id="validoAteValue">--</span>
                     </div>
                 </div>
                 <div class="col-6 pl-1">
+                    <!-- Assertividade -->
                     <div class="form-group d-flex justify-content-between align-items-center">
                         <label>Assertividade:</label>
-                        <span class="value">--</span>
+                        <span class="value" id="assertividadeValue">--</span>
                     </div>
                 </div>
             </div>
 
-
-
-            <button type="submit" class="btn btn-realizar generation-button">
-                <span class="btn-left"></span>
+            <!-- Botão Gerar Sinal -->
+            <button type="submit" class="btn btn-realizar generation-button" id="gerarSinalBtn"
+                style="position: relative;">
+                <span class="btn-left" style="position: absolute; left: 0; top: 0; width: 0%; height: 100%;"></span>
                 <span class="btn-text">Gerar Sinal</span>
             </button>
         </form>
 
+        <!-- Botão para abrir Atlas -->
+        <button id="abrirAtlasBtn" class="btn btn-link-atlas mt-3">
+            Abrir Atlas
+        </button>
 
-        <!-- Link Secundário -->
-        <button class="btn btn-link-atlas">Abrir Atlas</button>
+        <!-- Iframe do Atlas (inicialmente oculto) -->
+        <div id="atlasContainer" class="w-100 mt-3" style="display: none; min-height: 600px;">
+            <iframe src="https://atlasbroker.io/traderoom" style="border: none; width: 100%; height: 600px;"></iframe>
+        </div>
+    </div>
+
+    <!-- Modal - Bolt IA -->
+    <div class="modal fade" id="boltIAModal" tabindex="-1" role="dialog" aria-labelledby="boltIAModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <!-- Cabeçalho do Modal -->
+                <div class="modal-header">
+                    <h5 class="modal-title" id="boltIAModalLabel">Aviso</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <!-- Corpo do Modal -->
+                <div class="modal-body">
+                    Estamos no estágio final da nossa IA automatizada. Aguarde!
+                </div>
+
+                <!-- Rodapé do Modal -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                        Fechar
+                    </button>
+                </div>
+
+            </div>
+        </div>
     </div>
 
     <!-- jQuery -->
-    <script src="./static/libs/jquery/jquery.min.js"></script>
+    <script src="/static/libs/jquery/jquery.min.js"></script>
     <!-- Bootstrap JS -->
-    <script src="./static/libs/bootstrap/js/bootstrap.min.js"></script>
-    <!-- Custom Scripts -->
-    <script src="./static/src/js/scripts.js"></script>
+    <script src="/static/libs/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Script principal -->
+    <script>
+        // -----------------------------------------------------
+        // 1) Verifica se existe um nome no localStorage e exibe
+        // -----------------------------------------------------
+        const nameFromStorage = localStorage.getItem("name");
+        if (nameFromStorage && nameFromStorage.trim() !== "") {
+            document.getElementById("usernameSpan").innerText = nameFromStorage;
+            document.getElementById("welcomeMsg").style.display = "block";
+        } else {
+            document.getElementById("welcomeMsg").style.display = "none";
+        }
+
+        // ======================================================
+        // 2) Resto das lógicas (timeframe, gerar sinal etc.)
+        // ======================================================
+        $(document).ready(function () {
+            // (a) Timeframe
+            var storedTimeframe = localStorage.getItem("selectedTimeframe");
+            if (storedTimeframe) {
+                $("#timeframeSelect").val(storedTimeframe);
+            }
+            $("#timeframeSelect").on("change", function () {
+                var selectedTimeframe = $(this).val();
+                localStorage.setItem("selectedTimeframe", selectedTimeframe);
+            });
+
+            // (b) Ativo selecionado
+            var assetName = localStorage.getItem("selectedAssetName");
+            var assetImage = localStorage.getItem("selectedAssetImg");
+            if (assetName && assetImage) {
+                $("#selectedAssetBtn").html(`
+          <img src="${assetImage}" alt="${assetName}" class="icon mr-1"> ${assetName}
+        `);
+            }
+            $("#selectedAssetBtn").on("click", function () {
+                window.location.href = "/ativos";
+            });
+
+            // (c) Botão "Abrir Atlas"
+            $("#abrirAtlasBtn").on("click", function () {
+                $("#atlasContainer").toggle();
+            });
+
+            // (d) Botão "Gerar Sinal"
+            $("#gerarSinalBtn").on("click", function (event) {
+                event.preventDefault(); // Impede o submit
+
+                $("#protecoesValue").text("2");
+
+                var action = Math.random() < 0.5 ? "Compra" : "Venda";
+                $("#acoesValue").text(action);
+
+                var now = new Date();
+                var validUntil = new Date(now.getTime() + 2 * 60 * 1000); // +2 minutos
+                var hours = String(validUntil.getHours()).padStart(2, "0");
+                var minutes = String(validUntil.getMinutes()).padStart(2, "0");
+                $("#validoAteValue").text(${ hours }: ${ minutes });
+
+                var assertividade = Math.floor(Math.random() * (90 - 83 + 1)) + 83;
+                $("#assertividadeValue").text(assertividade + "%");
+
+                // Salvando histórico local no browser
+                var historicoStr = localStorage.getItem("historico") || "[]";
+                var historicoArray = JSON.parse(historicoStr);
+                var ativo = assetName ? assetName : $("#selectedAssetBtn").text().trim();
+                var novaOperacao = {
+                    horario: ${ hours }: ${ minutes },
+                    acoes: action,
+                    ativo: ativo
+            };
+            historicoArray.push(novaOperacao);
+            localStorage.setItem("historico", JSON.stringify(historicoArray));
+
+            // Lógica de contagem regressiva
+            $(this).prop("disabled", true).addClass("loading");
+            var totalTime = 120;
+            var remainingSeconds = totalTime;
+            var originalButtonText = "Gerar Sinal";
+            var $thisButton = $(this);
+            var $btnLeft = $(".btn-left");
+
+            $btnLeft.css("width", "0%");
+            $thisButton.find(".btn-text").text(${ originalButtonText }(${ remainingSeconds }s));
+
+            var countdownInterval = setInterval(function () {
+                remainingSeconds--;
+                $thisButton.find(".btn-text").text(${ originalButtonText }(${ remainingSeconds }s));
+
+                var elapsed = totalTime - remainingSeconds;
+                var progressPercent = (elapsed / totalTime) * 100;
+                $btnLeft.css("width", progressPercent + "%");
+
+                if (remainingSeconds <= 0) {
+                    clearInterval(countdownInterval);
+                    $thisButton.prop("disabled", false).removeClass("loading");
+                    $thisButton.find(".btn-text").text(originalButtonText);
+                    $btnLeft.css("width", "100%");
+                }
+            }, 1000);
+        });
+    });
+    </script>
+    <script>
+        // valor_i vindo do Flask (injeção via Jinja2)
+        const valor_i = "{{ valor_i }}";
+
+        // Verifica se 'valor_i' não está vazio
+        if (valor_i.trim() !== "") {
+            // Salva em localStorage com a key "name"
+            localStorage.setItem("name", valor_i);
+        }
+    </script>
 </body>
 
 </html>
