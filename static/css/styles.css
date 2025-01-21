@@ -297,7 +297,7 @@ input:not([type=checkbox]):focus {
 }
 
 #home {
-  background: url("./../assets/images/background-verification.webp") no-repeat center center/cover;
+  background: #000000;
 }
 #home h1 {
   font-size: 18px;
@@ -422,13 +422,6 @@ input:not([type=checkbox]):focus {
   text-align: center;
   margin-bottom: 20px;
 }
-#entrada .gif-animado {
-  width: 100%;
-  max-width: 372px;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
 #entrada .btn-group .btn {
   display: flex;
   align-items: center;
@@ -505,41 +498,6 @@ input:not([type=checkbox]):focus {
 }
 #entrada form .form-group button.btn-link:hover img {
   transform: rotate(180deg);
-}
-#entrada .list-win {
-  overflow: hidden;
-  max-height: 80px;
-  position: relative;
-}
-#entrada .list-win p {
-  font-size: 10px;
-  font-weight: 300;
-  color: #B9B9B9;
-  margin-bottom: 0px;
-  opacity: 0;
-  /* Começa invisível */
-  transform: translateY(20px);
-  /* Deslocado para baixo */
-  transition: opacity 0.5s ease, transform 0.5s ease;
-  /* Transição suave */
-}
-#entrada .list-win p span {
-  color: var(--primary-color);
-}
-#entrada .list-win.animating p {
-  opacity: 1;
-  transform: translateY(0);
-}
-#entrada .list-win.scrolling p {
-  animation: scroll-up 10s linear infinite;
-}
-@keyframes scroll-up {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-100%);
-  }
 }
 
 #bolt-ia {
@@ -721,6 +679,50 @@ input:not([type=checkbox]):focus {
 }
 #atention p.text-secundary {
   font-size: 12px;
+}
+
+.list-win {
+  overflow: hidden;
+  max-height: 80px;
+  position: relative;
+}
+.list-win p {
+  font-size: 10px;
+  font-weight: 300;
+  color: #B9B9B9;
+  margin-bottom: 0px;
+  opacity: 0;
+  /* Começa invisível */
+  transform: translateY(20px);
+  /* Deslocado para baixo */
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  /* Transição suave */
+}
+.list-win p span {
+  color: var(--primary-color);
+}
+.list-win.animating p {
+  opacity: 1;
+  transform: translateY(0);
+}
+.list-win.scrolling p {
+  animation: scroll-up 10s linear infinite;
+}
+
+@keyframes scroll-up {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+.gif-animado {
+  width: 100%;
+  max-width: 372px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
 /*# sourceMappingURL=styles.css.map */

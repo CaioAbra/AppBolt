@@ -328,7 +328,8 @@ input:not([type="checkbox"]) {
 }
 
 #home {
-    background: url('./../assets/images/background-verification.webp') no-repeat center center/cover;
+    // background: url('./../assets/images/background-verification.webp') no-repeat center center/cover;
+    background: #000000;
 
     h1 {
         font-size: 18px;
@@ -480,13 +481,7 @@ input:not([type="checkbox"]) {
         margin-bottom: 20px;
     }
 
-    .gif-animado {
-        width: 100%;
-        max-width: 372px;
-        height: auto;
-        display: block;
-        margin: 0 auto;
-    }
+
 
     .btn-group {
 
@@ -596,48 +591,7 @@ input:not([type="checkbox"]) {
 
     }
 
-    .list-win {
-        overflow: hidden; // Esconde itens fora do contêiner
-        max-height: 80px; // Altura visível da lista
-        position: relative;
 
-        p {
-            font-size: 10px;
-            font-weight: 300;
-            color: #B9B9B9;
-            margin-bottom: 0px;
-            opacity: 0;
-            /* Começa invisível */
-            transform: translateY(20px);
-            /* Deslocado para baixo */
-            transition: opacity 0.5s ease, transform 0.5s ease;
-            /* Transição suave */
-
-
-            span {
-                color: var(--primary-color);
-            }
-        }
-
-        &.animating p {
-            opacity: 1; // Faz os itens aparecerem
-            transform: translateY(0); // Move para a posição original
-        }
-
-        &.scrolling p {
-            animation: scroll-up 10s linear infinite; // Faz os itens subirem continuamente
-        }
-    }
-
-    @keyframes scroll-up {
-        0% {
-            transform: translateY(0); // Posição inicial
-        }
-
-        100% {
-            transform: translateY(-100%); // Move os itens completamente para cima
-        }
-    }
 
 }
 
@@ -865,4 +819,55 @@ input:not([type="checkbox"]) {
             font-size: 12px;
         }
     }
+}
+
+.list-win {
+    overflow: hidden; // Esconde itens fora do contêiner
+    max-height: 80px; // Altura visível da lista
+    position: relative;
+
+    p {
+        font-size: 10px;
+        font-weight: 300;
+        color: #B9B9B9;
+        margin-bottom: 0px;
+        opacity: 0;
+        /* Começa invisível */
+        transform: translateY(20px);
+        /* Deslocado para baixo */
+        transition: opacity 0.5s ease, transform 0.5s ease;
+        /* Transição suave */
+
+
+        span {
+            color: var(--primary-color);
+        }
+    }
+
+    &.animating p {
+        opacity: 1; // Faz os itens aparecerem
+        transform: translateY(0); // Move para a posição original
+    }
+
+    &.scrolling p {
+        animation: scroll-up 10s linear infinite; // Faz os itens subirem continuamente
+    }
+}
+
+@keyframes scroll-up {
+    0% {
+        transform: translateY(0); // Posição inicial
+    }
+
+    100% {
+        transform: translateY(-100%); // Move os itens completamente para cima
+    }
+}
+
+.gif-animado {
+    width: 100%;
+    max-width: 372px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
